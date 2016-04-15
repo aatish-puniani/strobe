@@ -1,0 +1,2 @@
+class PhotoAssistantsController < ApplicationController
+end
