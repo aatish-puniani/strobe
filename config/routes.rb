@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :assistants
   get '/' => 'photo_assistants#index'
   get '/photo_assistants' => 'photo_assistants#index'
   get '/photo_assistants/new' => 'photo_assistants#new'
