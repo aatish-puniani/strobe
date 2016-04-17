@@ -1,0 +1,2 @@
+module StrobesHelper
+end
