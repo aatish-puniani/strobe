@@ -2,12 +2,11 @@ Rails.application.routes.draw do
   devise_for :assistants
   get '/' => 'strobes#home'
   
-  get '/photo_assistants' => 'photo_assistants#index'
-  get '/photo_assistants/new' => 'photo_assistants#new'
-  post '/photo_assistants' => 'photo_assistants#create'
-  get '/photo_assistants/:id' => 'photo_assistants#show'
-  get '/photo_assistants/:id/edit' => 'photo_assistants#edit'
-  patch '/photo_assistants/:id' => 'photo_assistants#update'
-  delete '/photo_assistants/:id' => 'photo_assistants#destroy'
-
+  get '/assistants' => 'assistants#index'
+  get '/assistants/new' => 'assistants#new'
+  post '/assistants' => 'assistants#create'
+  get '/assistants/:id' => 'assistants#show'
+  get '/assistants/:id/edit' => 'assistants#edit'
+  patch '/assistants/:id' => 'assistants#update'
+  delete '/assistants/:id' => 'assistants#destroy'
 end

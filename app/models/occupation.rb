@@ -1,3 +1,3 @@
 class Occupation < ActiveRecord::Base
-  has_many :photo_assistants
+  has_many :assistants
 end

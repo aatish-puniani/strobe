@@ -1,3 +1,3 @@
 class Image < ActiveRecord::Base
-  belongs_to :photo_assistant
+  belongs_to :assistant
 end
