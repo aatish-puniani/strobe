@@ -11,9 +11,15 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <%= image_tag("Strobe_logo") %>
+      <a class="navbar-brand" href="/">
+        <%= image_tag("strobe_logo_small") %>
       </a>
+      <ul class="nav navbar-nav navbar-right">
+
+              <li><a href="/assistants/sign_in">Log in</a></li>
+              <li><a href="/assistants/sign_up">Sign up</a></li>
+              <li><%= link_to "Log out", "/assistants/sign_out", method: :delete %></li>
+            
     </div>
   </div>
 </nav>

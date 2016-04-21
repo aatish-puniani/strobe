@@ -1,0 +1,75 @@
+<h1>Create an account</h1>
+
+<%= form_tag '/photo_assistants', method: :post do %>
+  <div class="form-group">
+    <%= label_tag :name %>
+    <%= text_field_tag :name %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :company %>
+    <%= text_field_tag :company %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :phone_number %>
+    <%= text_field_tag :phone_number %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :address %>
+    <%= text_field_tag :address %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :day_rate %>
+    <%= text_field_tag :day_rate %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :worked_with %>
+    <%= text_field_tag :worked_with %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :url %>
+    <%= text_field_tag :url %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :bio %>
+    <%= text_field_tag :bio %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :facebook %>
+    <%= text_field_tag :facebook %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :twitter %>
+    <%= text_field_tag :twitter %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :instagram %>
+    <%= text_field_tag :instagram %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :blog %>
+    <%= text_field_tag :blog %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :years_exp %>
+    <%= text_field_tag :years_exp %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :car %>
+    <%= text_field_tag :car %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :occupation %>
+    <%= collection_select :occupation, :occupation_id, @occupations, :id, :name %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :city %>
+    <%= collection_select :city, :city_id, @citys, :id, :name %>
+  </div>
+  <div>
+  <%= submit_tag "Create" %>
+  </div>
+<% end %>
