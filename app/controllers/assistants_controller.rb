@@ -1,12 +1,12 @@
 class AssistantsController < ApplicationController
   def index
-    @photo_assistants = PhotoAssistant.all
+    @assistants = Assistant.all
     @occupations = Occupation.all
     @citys = City.all
   end
 
   def new
-    @photo_assistants = PhotoAssistant.new
+    @assistants = Assistant.new
     @occupations = Occupation.all
     @citys = City.all
   end
@@ -14,7 +14,7 @@ class AssistantsController < ApplicationController
   def create
     @occupations = Occupation.all
     @citys = City.all
-    @photo_assistants = PhotoAssistant.create(
+    @assistants = Assistant.create(
       name: params[:name],
       company: params[:company],
       email: params[:email],
@@ -33,7 +33,7 @@ class AssistantsController < ApplicationController
       occupation_id: params[:occupation_id],
       city_id: params[:city_id]
     )
-    redirect_to '/photo_assistants'
+    redirect_to '/assistants'
   end
 
   def show
