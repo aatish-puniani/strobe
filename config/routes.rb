@@ -10,4 +10,10 @@ Rails.application.routes.draw do
   get '/assistants/:id/edit' => 'assistants#edit'
   patch '/assistants/:id' => 'assistants#update'
   delete '/assistants/:id' => 'assistants#destroy'
+
+  get '/photographers' => 'photographers#index'
+  get '/photographers/:id' => 'photographers#show'
+  get '/photographers/:id/edit' => 'photographers#edit'
+  patch '/photographers/:id' => 'photographers#update'
+  delete '/photographers/:id' => 'photographers#destroy'
 end
