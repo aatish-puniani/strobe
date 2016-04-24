@@ -1,3 +1,6 @@
+<% if current_assistant %>
+  <a href="/assistants/<%= current_assistant.id %>/edit">Edit your profile</a>
+<% end %>
 <br>
   <h2>What are you looking for?</h2>
     <h3><%= link_to "Photo Assistants", "/assistants" %></h3>

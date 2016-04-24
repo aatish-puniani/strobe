@@ -37,7 +37,8 @@ class AssistantsController < ApplicationController
       flash[:success] = "Account Made!" 
       redirect_to "/assistants/#{@assistant.id}"
     else
-    redirect_to '/assistants/new'
+      redirect_to '/assistants/new'
+    end
   end
 
   def show
@@ -76,8 +77,8 @@ class AssistantsController < ApplicationController
       redirect_to "/assistants/#{@assistant.id}"
     else
       render "edit.html.erb"
+    end
   end
-end
 
   def destroy
     assistant_id = params[:id]

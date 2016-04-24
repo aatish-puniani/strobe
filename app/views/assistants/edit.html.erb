@@ -10,6 +10,10 @@
     <%= text_field_tag :company %>
   </div>
   <div class="form-group">
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
+  </div>
+  <div class="form-group">
     <%= label_tag :phone_number %>
     <%= text_field_tag :phone_number %>
   </div>
@@ -56,14 +60,6 @@
   <div class="form-group">
     <%= label_tag :car %>
     <%= text_field_tag :car %>
-  </div>
-  <div class="form-group">
-    <%= label_tag :occupation %>
-    <%= collection_select :occupation, :occupation_id, @occupations, :id, :name %>
-  </div>
-  <div class="form-group">
-    <%= label_tag :city %>
-    <%= collection_select :city, :city_id, @citys, :id, :name %>
   </div>
   <div>
   <%= submit_tag "Create" %>
