@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :photographers
   devise_for :assistants
   get '/' => 'strobes#home'
+  get '/sign_up' => 'strobes#sign_up'
   
   get '/assistants' => 'assistants#index'
   # get '/assistants/new' => 'assistants#new'
