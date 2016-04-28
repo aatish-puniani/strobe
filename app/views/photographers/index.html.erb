@@ -1,0 +1,21 @@
+<h1>Photographers</h1>
+
+<div>
+  <% @photographers.each do |photographer| %>
+      <h2>Name: <%= photographer.name %></h2>
+      <h3>Company: <%= photographer.company %></h3>
+      <p>Email: <%= photographer.email %></p>
+      <p>Phone number: <%= photographer.phone_number %></p>
+      <p>Address: <%= photographer.address %></p>
+      <p>Day rate: $<%= photographer.day_rate %></p>
+      <p>Worked with: <%= photographer.worked_with %></p>
+      <p>URL: <%= photographer.url %></p>
+      <p>Bio: <%= photographer.bio %></p>
+      <p>Facebook: <%= photographer.facebook %></p>
+      <p>Twitter: <%= photographer.twitter %></p>
+      <p>Instagram: <%= photographer.instagram %></p>
+      <p>Blog: <%= photographer.blog %></p>
+      <p>Years Experience: <%= photographer.years_exp %></p>
+      <p>Car: <%= photographer.car %></p>
+    </div>
+<% end %>
