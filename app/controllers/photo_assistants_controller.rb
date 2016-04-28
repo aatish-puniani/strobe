@@ -37,6 +37,7 @@ class PhotoAssistantsController < ApplicationController
   end
 
   def show
+     = Photographer.find_by(id: params[:id])
   end
 
   def edit
