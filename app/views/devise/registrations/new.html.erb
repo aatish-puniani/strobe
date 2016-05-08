@@ -5,7 +5,7 @@
                     <div class="inner-box category-content">
                         <h2 class="title-2"><i class="icon-user-add"></i> Sign Up </h2>
 
-                        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                        <%= form_for("user", url: registration_path(resource_name)) do |f| %>
                         <%= devise_error_messages! %>
 
                         <div class="row">
@@ -18,14 +18,14 @@
                                             <div class="col-md-6">
                                                 <div class="radio">
                                                     <label>
-                                                        <input onclick="change('photograher')" type="radio" name="optionsRadios" id="optionsRadios1"
-                                                               value="option1" checked>
+                                                        <input type="radio" name="role" id="optionsRadios1"
+                                                               value="photographer" checked>
                                                         Photographer or Producer </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input onclick="change('assistant')" type="radio" name="optionsRadios" id="optionsRadios2"
-                                                               value="option2">
+                                                        <input type="radio" name="role" id="optionsRadios2"
+                                                               value="assistant">
                                                         Assistant or Digital Tech </label>
                                                 </div>
                                             </div>
@@ -65,13 +65,7 @@
                                     </fieldset>
                                 </form>
 
-                                <script type="text/javascript">
-                                  var change = function(input) {
-                                    var x = document.getElementById('submit-button');
-                                    x.href = "/" + input + "/sign_up";
-                                  }
-​
-                                </script>
+                            
                             </div>
                         </div>
                     </div>
@@ -81,23 +75,6 @@
 <!-- /.wrapper --> <!-- Le javascript
 ================================================== -->
 
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
-<!-- include carousel slider plugin  -->
-<script src="assets/js/owl.carousel.min.js"></script>
-
-<!-- include equal height plugin  -->
-<script src="assets/js/jquery.matchHeight-min.js"></script>
-
-<!-- include jquery list shorting plugin plugin  -->
-<script src="assets/js/hideMaxListItem.js"></script>
-
-<!-- include jquery.fs plugin for custom scroller and selecter  -->
-<script src="assets/plugins/jquery.fs.scroller/jquery.fs.scroller.js"></script>
-<script src="assets/plugins/jquery.fs.selecter/jquery.fs.selecter.js"></script>
-<!-- include custom script for site  -->
-<script src="assets/js/script.js"></script>
 
 

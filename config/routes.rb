@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :photographers
-  devise_for :assistants
+  devise_for :photographers, :controllers => {:registrations => "registrations"}
+  devise_for :assistants, :controllers => {:registrations => "registrations"}
   get '/' => 'strobes#home'
   get '/sign_up' => 'strobes#sign_up'
   get '/login' => 'strobes#login'
