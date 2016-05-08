@@ -15,13 +15,13 @@
                                             <div class="col-md-6">
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios" id="optionsRadios1"
+                                                        <input onclick="change('photograher')" type="radio" name="optionsRadios" id="optionsRadios1"
                                                                value="option1" checked>
                                                         Photographer or Producer </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios" id="optionsRadios2"
+                                                        <input onclick="change('assistant')" type="radio" name="optionsRadios" id="optionsRadios2"
                                                                value="option2">
                                                         Assistant or Digital Tech </label>
                                                 </div>
@@ -82,10 +82,18 @@
                                                         & Conditions</a> </label>
                                                 </div>
                                                 <div style="clear:both"></div>
-                                                <a class="btn btn-primary" href="account-home.html">Register</a></div>
+                                                <a class="btn btn-primary" href="/edit">Register</a></div>
                                         </div>
                                     </fieldset>
                                 </form>
+
+                                <script type="text/javascript">
+                                  var change = function(input) {
+                                    var x = document.getElementById('submit-button');
+                                    x.href = "/" + input + "/sign_up";
+                                  }
+​
+                                </script>
                             </div>
                         </div>
                     </div>

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/' => 'strobes#home'
   get '/sign_up' => 'strobes#sign_up'
   get '/login' => 'strobes#login'
+  get '/about' => 'strobes#about'
+
   
   get '/assistants' => 'assistants#index'
   get '/assistants/:id' => 'assistants#show'
