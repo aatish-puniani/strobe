@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get '/login' => 'strobes#login'
   get '/about' => 'strobes#about'
 
-  
   get '/assistants' => 'assistants#index'
   get '/assistants/:id' => 'assistants#show'
   get '/assistants/:id/edit' => 'assistants#edit'

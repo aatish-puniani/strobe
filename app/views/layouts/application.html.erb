@@ -56,9 +56,13 @@
                         <span class="logo-icon"><%= image_tag("nav_logo.png") %></a></div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
+                    <% if current_photographer == nil %>
                         <li><a href="/login">Login</a></li>
                         <li class="postadd"><a class="btn btn-block   btn-border btn-post btn-danger"
-                                               href="/sign_up">Sign Up</a></li>
+                            href="/photographers/sign_up">Sign Up</a></li>
+                    <% else %>
+                    <li><%= link_to "Log out", "/photographers/sign_out", method: :delete %></li>
+                    <% end %>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
