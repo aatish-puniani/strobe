@@ -4,12 +4,14 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    if(params[:role] == "assistant")
+    if (params[:role] == "assistant")
       Assistant.create(email: params[:user][:email], password: params[:user][:password], password_confirmation: params[:user][:password_confirmation])
     else
-      Photographer.create(email: params[:user][:email], password: params[:user][:password], password_confirmation: params[:user][:password_confirmation])
+      photographer = Photographer.create(email: params[:user][:email], password: params[:user][:password], password_confirmation: params[:user][:password_confirmation])
+      if (photographer.save)
+        redirect_to "/photographers/#{photographer.id}/edit"
+      end
     end
-    redirect_to "/"
   end
 
   def update
