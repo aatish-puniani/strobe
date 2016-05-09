@@ -1,4 +1,15 @@
-<h2>Log in</h2>
+      <div class="main-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 login-box">
+                    <div class="panel panel-default">
+                        <div class="panel-intro text-center">
+                            <h2 class="logo-title">
+                                <!-- Original Logo will be placed here  -->
+                                <span class="logo-icon"><i
+                                        class="logo-icon"><%= image_tag("nav_logo.png") %></i> </span>
+                            </h2>
+                        </div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -20,6 +31,11 @@
 
   <div class="actions">
     <%= f.submit "Log in" %>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
   </div>
 <% end %>
 
