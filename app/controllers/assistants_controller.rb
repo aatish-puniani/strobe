@@ -16,6 +16,8 @@ class AssistantsController < ApplicationController
   end
 
   def update
+    @occupations = Occupation.all
+    @citys = City.all
     assistant_id = params[:id]
     @assistant = Assistant.find_by(id: assistant_id)
     @assistant.name = params[:name] unless params[:name].empty?

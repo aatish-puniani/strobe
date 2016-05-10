@@ -6,49 +6,27 @@
                         <div class="inner-box">
                             <div class="user-panel-sidebar">
                                 <div class="collapse-box">
-                                    <h5 class="collapse-title no-border"> My Classified <a href="#MyClassified"
-                                                                                           data-toggle="collapse"
-                                                                                           class="pull-right"><i
-                                            class="fa fa-angle-down"></i></a></h5>
+                                    
 
-                                    <div class="panel-collapse collapse in" id="MyClassified">
+                                    <div class="panel-collapse collapse in">
                                         <ul class="acc-list">
-                                            <li><a class="active" href="account-home.html"><i class="icon-home"></i>
-                                                Personal Home </a></li>
-
+                                            <li><a class="active" href="/photographers/#{@photographer.id}"><i class="icon-home"></i>
+                                                View Profile </a></li>
+                                            <li><a class="active" href="/photographers/#{@photographer.id}/edit"><i class="icon-home"></i>
+                                                Edit Profile </a></li>
+                                            <li><a class="active" href="/photographers/#{@photographer.id}"><i class="icon-home"></i>
+                                                View Jobs </a></li>
+                                            <li><a class="active" href="/photographers/#{@photographer.id}"><i class="icon-home"></i>
+                                                Edit Jobs </a></li>
                                         </ul>
                                     </div>
                                 </div>
-                                <!-- /.collapse-box  -->
-                                <div class="collapse-box">
-                                    <h5 class="collapse-title"> My Ads <a href="#MyAds" data-toggle="collapse"
-                                                                          class="pull-right"><i
-                                            class="fa fa-angle-down"></i></a></h5>
-
-                                    <div class="panel-collapse collapse in" id="MyAds">
-                                        <ul class="acc-list">
-                                            <li><a href="account-myads.html"><i class="icon-docs"></i> My ads <span
-                                                    class="badge">42</span> </a></li>
-                                            <li><a href="account-favourite-ads.html"><i class="icon-heart"></i>
-                                                Favourite ads <span class="badge">42</span> </a></li>
-                                            <li><a href="account-saved-search.html"><i class="icon-star-circled"></i>
-                                                Saved search <span class="badge">42</span> </a></li>
-                                            <li><a href="account-archived-ads.html"><i class="icon-folder-close"></i>
-                                                Archived ads <span class="badge">42</span></a></li>
-                                            <li><a href="account-pending-approval-ads.html"><i
-                                                    class="icon-hourglass"></i> Pending approval <span
-                                                    class="badge">42</span></a></li>
-
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- /.collapse-box  -->
+                               
 
                                 <div class="collapse-box">
                                     <h5 class="collapse-title"> Terminate Account <a href="#TerminateAccount"
                                                                                      data-toggle="collapse"
-                                                                                     class="pull-right"><i
-                                            class="fa fa-angle-down"></i></a></h5>
+                                                                                     class="pull-right"></a></h5>
 
                                     <div class="panel-collapse collapse in" id="TerminateAccount">
                                         <ul class="acc-list">
@@ -71,7 +49,7 @@
                         <div class="row">
                             <div class="col-md-5 col-xs-4 col-xxs-12">
                                 <h3 class="no-padding text-center-480 useradmin"><a href=""><img class="userImg"
-                                alt="user" <%= image_tag("user.jpg") %>>
+                                alt="user" <%= image_tag("user.jpg") %>
                                 
                                 <%= @photographer.name ? @photographer.name : nil %>
                                 </a></h3>
@@ -86,31 +64,22 @@
                                             <i class="fa fa-eye ln-shadow"></i></div>
                                         <div class="mcol-right">
                                             <!-- Number of visitors -->
-                                            <p><a href="#">7000</a> <em>visits</em></p>
+                                            <p><a href="#">Post a Job</a></p>
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
 
                                     <!-- revenue data -->
-                                    <div class="hdata">
-                                        <div class="mcol-left">
-                                            <!-- Icon with green background -->
-                                            <i class="icon-th-thumb ln-shadow"></i></div>
-                                        <div class="mcol-right">
-                                            <!-- Number of visitors -->
-                                            <p><a href="#">12</a><em>Ads</em></p>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
+                                   
 
                                     <!-- revenue data -->
                                     <div class="hdata">
                                         <div class="mcol-left">
                                             <!-- Icon with blue background -->
-                                            <i class="fa fa-user ln-shadow"></i></div>
+                                            </div>
                                         <div class="mcol-right">
                                             <!-- Number of visitors -->
-                                            <p><a href="#">18</a> <em>Favorites </em></p>
+                                            
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
@@ -122,7 +91,6 @@
                     <div class="inner-box">
                         <div class="welcome-msg">
                             <h3 class="page-sub-header2 clearfix no-padding">Hello <%= @photographer.name %> </h3>
-                            <span class="page-sub-header-sub small">You last logged in at: 01-01-2014 12:40 AM [UK time (GMT + 6:00hrs)]</span>
                         </div>
 
                         <!--/.row-box End-->
