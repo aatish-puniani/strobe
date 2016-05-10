@@ -18,7 +18,7 @@ class PhotographersController < ApplicationController
   def update
     photographer_id = params[:id]
     @photographer = Photographer.find_by(id: photographer_id)
-    if @assistant.update(
+    if @photographer.update(
       name: params[:name],
       company: params[:company],
       email: params[:email],

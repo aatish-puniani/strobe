@@ -127,12 +127,12 @@
 
                         <!--/.row-box End-->
                         <div class="row">
-                          <%= form_tag '/photographers', method: :patch do %>
+                          <%= form_tag "/photographers/#{@photographer.id}", method: :patch do %>
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Name</label>
 
                                   <div class="col-sm-9">
-                                      <input name="name" type="text" class="form-control" placeholder="Name">
+                                      <input name="name" type="text" class="form-control" placeholder=<%= @photographer.name %>>
                                   </div>
                               </div>
                               <div class="form-group">
@@ -147,7 +147,7 @@
 
                                   <div class="col-sm-9">
                                       <input name=<%= @photographer.email %> type="email" class="form-control"
-                                             placeholder="photo@photographer.com">
+                                             placeholder=<%= @photographer.email %>>
                                   </div>
                               </div>
                               <div class="form-group">
@@ -255,7 +255,13 @@
                                       <button type="submit" class="btn btn-default">Update</button>
                                   </div>
                               </div>
-                              
+                              </div>
+                              </div>
+                              </div>
+                              </div>
+                              </div>
+                              </div>
+
                             <% end %>
                         </div>
                     </div>
