@@ -1,17 +1,238 @@
-<div>
-      <h2>Name: <%= @assistant.name %></h2>
-      <h3>Company: <%= @assistant.company %></h3>
-      <p>Email: <%= @assistant.email %></p>
-      <p>Phone number: <%= @assistant.phone_number %></p>
-      <p>Address: <%= @assistant.address %></p>
-      <p>Day rate: $<%= @assistant.day_rate %></p>
-      <p>Worked with: <%= @assistant.worked_with %></p>
-      <p>URL: <%= @assistant.url %></p>
-      <p>Bio: <%= @assistant.bio %></p>
-      <p>Facebook: <%= @assistant.facebook %></p>
-      <p>Twitter: <%= @assistant.twitter %></p>
-      <p>Instagram: <%= @assistant.instagram %></p>
-      <p>Blog: <%= @assistant.blog %></p>
-      <p>Years Experience: <%= @assistant.years_exp %></p>
-      <p>Car: <%= @assistant.car %></p>
-    </div>
+<div class="main-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 page-sidebar">
+                    <aside>
+                        <div class="inner-box">
+                            <div class="user-panel-sidebar">
+                                <div class="collapse-box">
+                                    <h5 class="collapse-title no-border"> My Classified <a href="#MyClassified"
+                                                                                           data-toggle="collapse"
+                                                                                           class="pull-right"><i
+                                            class="fa fa-angle-down"></i></a></h5>
+
+                                    <div class="panel-collapse collapse in" id="MyClassified">
+                                        <ul class="acc-list">
+                                            <li><a class="active" href="account-home.html"><i class="icon-home"></i>
+                                                Personal Home </a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- /.collapse-box  -->
+                                <div class="collapse-box">
+                                    <h5 class="collapse-title"> My Ads <a href="#MyAds" data-toggle="collapse"
+                                                                          class="pull-right"><i
+                                            class="fa fa-angle-down"></i></a></h5>
+
+                                    <div class="panel-collapse collapse in" id="MyAds">
+                                        <ul class="acc-list">
+                                            <li><a href="account-myads.html"><i class="icon-docs"></i> My ads <span
+                                                    class="badge">42</span> </a></li>
+                                            <li><a href="account-favourite-ads.html"><i class="icon-heart"></i>
+                                                Favourite ads <span class="badge">42</span> </a></li>
+                                            <li><a href="account-saved-search.html"><i class="icon-star-circled"></i>
+                                                Saved search <span class="badge">42</span> </a></li>
+                                            <li><a href="account-archived-ads.html"><i class="icon-folder-close"></i>
+                                                Archived ads <span class="badge">42</span></a></li>
+                                            <li><a href="account-pending-approval-ads.html"><i
+                                                    class="icon-hourglass"></i> Pending approval <span
+                                                    class="badge">42</span></a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- /.collapse-box  -->
+
+                                <div class="collapse-box">
+                                    <h5 class="collapse-title"> Terminate Account <a href="#TerminateAccount"
+                                                                                     data-toggle="collapse"
+                                                                                     class="pull-right"><i
+                                            class="fa fa-angle-down"></i></a></h5>
+
+                                    <div class="panel-collapse collapse in" id="TerminateAccount">
+                                        <ul class="acc-list">
+                                            <li><a href="account-close.html"><i class="icon-cancel-circled "></i> Close
+                                                account </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- /.collapse-box  -->
+                            </div>
+                        </div>
+                        <!-- /.inner-box  -->
+
+                    </aside>
+                </div>
+                <!--/.page-sidebar-->
+
+                <div class="col-sm-9 page-content">
+                    <div class="inner-box">
+                        <div class="row">
+                            <div class="col-md-5 col-xs-4 col-xxs-12">
+                                <h3 class="no-padding text-center-480 useradmin"><a href=""><img class="userImg"
+                                alt="user" <%= image_tag("user.jpg") %>>
+                                
+                                <%= @assistant.name ? @assistant.name : nil %>
+                                </a></h3>
+                            </div>
+                            <div class="col-md-7 col-xs-8 col-xxs-12">
+                                <div class="header-data text-center-xs">
+
+                                    <!-- Traffic data -->
+                                    <div class="hdata">
+                                        <div class="mcol-left">
+                                            <!-- Icon with red background -->
+                                            <i class="fa fa-eye ln-shadow"></i></div>
+                                        <div class="mcol-right">
+                                            <!-- Number of visitors -->
+                                            <p><a href="#">7000</a> <em>visits</em></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <!-- revenue data -->
+                                    <div class="hdata">
+                                        <div class="mcol-left">
+                                            <!-- Icon with green background -->
+                                            <i class="icon-th-thumb ln-shadow"></i></div>
+                                        <div class="mcol-right">
+                                            <!-- Number of visitors -->
+                                            <p><a href="#">12</a><em>Ads</em></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <!-- revenue data -->
+                                    <div class="hdata">
+                                        <div class="mcol-left">
+                                            <!-- Icon with blue background -->
+                                            <i class="fa fa-user ln-shadow"></i></div>
+                                        <div class="mcol-right">
+                                            <!-- Number of visitors -->
+                                            <p><a href="#">18</a> <em>Favorites </em></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inner-box">
+                        <div class="welcome-msg">
+                            <h3 class="page-sub-header2 clearfix no-padding">Hello <%= @assistant.name %> </h3>
+                            <span class="page-sub-header-sub small">You last logged in at: 01-01-2014 12:40 AM [UK time (GMT + 6:00hrs)]</span>
+                        </div>
+
+                        <!--/.row-box End-->
+                        <div class="row">
+                          
+                                  <label class="col-sm-3 control-label">Name</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.name %></p>
+                                  </div>
+                                  
+                                  <label class="col-sm-3 control-label">Company</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.company %></p>
+                                  </div>
+                                  
+                                  <label class="col-sm-3 control-label">Email</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.email %></p>
+                                  </div>
+                                  
+                                  <label class="col-sm-3 control-label">Phone Number</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.phone_number %></p>
+                                  </div>
+                                  
+                                  <label class="col-sm-3 control-label">Address</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.address %></p>
+                                  </div>
+                                  
+                                  <label class="col-sm-3 control-label">Day Rate</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.day_rate %></p>
+                                  </div>
+                                  
+                                  <label class="col-sm-3 control-label">Worked With</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.worked_with %></p>
+                                  </div>
+                                  
+                                  <label class="col-sm-3 control-label">URL</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.url %></p>
+                                  </div>
+                                  
+                                  <label class="col-sm-3 control-label">User Photo</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.user_photo %></p>
+                                  </div>
+                                  
+                                  <label class="col-sm-3 control-label">Bio</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.bio %></p>
+                                  </div>
+                                  
+                                  <label class="col-sm-3 control-label">Facebook</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.facebook %></p>
+                                  </div>
+                                  
+                                  <label class="col-sm-3 control-label">Twitter</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.twitter %></p>
+                                  </div>
+                                  
+                                  <label class="col-sm-3 control-label">Instagram</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.instagram %></p>
+                                  </div>
+                                  
+                                  <label class="col-sm-3 control-label">Blog</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.blog %></p>
+                                  </div>
+
+                                  <label class="col-sm-3 control-label">Years of Experience</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.years_exp %></p>
+                                  </div>
+
+                                  <label class="col-sm-3 control-label">Occupation</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.occupation %></p>
+                                  </div>
+
+                                  <label class="col-sm-3 control-label">Car</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.car %></p>
+                                  </div>
+
+                                  <label class="col-sm-3 control-label">City</label>
+
+                                  <div class="col-sm-9">
+                                      <p><%= @assistant.city %></p>
+                                  </div>
+
