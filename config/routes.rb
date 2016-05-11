@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   get '/photographers/:id/edit' => 'photographers#edit'
   patch '/photographers/:id' => 'photographers#update'
   delete '/photographers/:id' => 'photographers#destroy'
+  get '/photographers/:id/avatar_edit' => 'photographers#avatar_edit'
+  patch '/photographers/:id' => 'photographers#avatar_update'
 end

@@ -70,4 +70,22 @@ class PhotographersController < ApplicationController
     redirect_to "/photographers"
   end
 
+  def avatar_edit
+    photographer_id = params[:id]
+    @photographer = Photographer.find_by(id: photographer_id)
+  end
 
+  def avatar_update
+    photographer_id = params[:id]
+    @photographer = Photographer.find_by(id: photographer_id)
+    @photographer.update(
+      avatar: params[:avatar]
+    )
+    if @photographer.save
+      flash[:success] = "Profile successfully updated!"
+      redirect_to "/photographers/#{@photographer.id}"
+    else
+      redirect_to action: :show
+    end
+  end
+end
