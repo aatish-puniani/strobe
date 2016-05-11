@@ -21,7 +21,7 @@ class PhotographersController < ApplicationController
     if @photographer.update(
       name: params[:name] || @photographer.name,
       company: params[:company] || @photographer.company,
-      email: params[:email] || @photographer.email,
+      # email: params[:email] || @photographer.email,
       mobile_number: params[:mobile_number] || @photographer.mobile_number,
       studio_number: params[:studio_number] || @photographer.studio_number,
       address: params[:address] || @photographer.address,

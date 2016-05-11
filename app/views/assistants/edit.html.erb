@@ -99,36 +99,38 @@
                                   <label class="col-sm-3 control-label">Name</label>
 
                                   <div class="col-sm-9">
-                                      <input name="name" type="string" class="form-control" placeholder=<%= @assistant.name %>>
+                                      <input name="name" type="string" class="form-control" value="<%= @assistant.name %>">
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Company</label>
 
                                   <div class="col-sm-9">
-                                      <input name="company" type="string" class="form-control" placeholder=<%= @assistant.company %>>
+                                      <input name="company" type="string" class="form-control" value="<%= @assistant.company %>">
                                   </div>
                               </div>
-                              <div class="form-group">
+
+                              <!-- <div class="form-group">
                                   <label class="col-sm-3 control-label">Email</label>
 
                                   <div class="col-sm-9">
                                       <input name="email" type="string" class="form-control"
-                                             placeholder=<%= @assistant.email %>>
+                                             value="<%= @assistant.email %>">
                                   </div>
-                              </div>
+                              </div> -->
+
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Phone Number</label>
 
                                   <div class="col-sm-9">
-                                      <input name="phone_number" type="string" class="form-control" placeholder=<%= @assistant.phone_number %>>
+                                      <input name="phone_number" type="string" class="form-control" value="<%= @assistant.phone_number %>">
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Address</label>
 
                                   <div class="col-sm-9">
-                                      <input name="address" type="string" class="form-control" placeholder=<%= @assistant.address %>>
+                                      <input name="address" type="string" class="form-control" value="<%= @assistant.address %>">
                                   </div>
                               </div>
                               <div class="form-group">
@@ -136,7 +138,7 @@
 
                                   <div class="col-sm-9">
                                       <input name="day_rate" type="integer" class="form-control"
-                                             placeholder=<%= @assistant.day_rate %>>
+                                             value="<%= @assistant.day_rate %>">
                                   </div>
                               </div>
                               <div class="form-group">
@@ -144,56 +146,58 @@
 
                                   <div class="col-sm-9">
                                       <input name="worked_with" type="text" class="form-control"
-                                             placeholder=<%= @assistant.worked_with %>>
+                                             value="<%= @assistant.worked_with %>">
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">URL</label>
 
                                   <div class="col-sm-9">
-                                      <input name="url" type="string" class="form-control" placeholder=<%= @assistant.url %>>
+                                      <input name="url" type="string" class="form-control" value="<%= @assistant.url %>">
                                   </div>
                               </div>
-                              <div class="form-group">
+
+                              <!-- <div class="form-group">
                                   <label class="col-sm-3 control-label">User Photo</label>
 
                                   <div class="col-sm-9">
-                                      <input name="user_photo" type="string" class="form-control" placeholder="User Photo">
+                                      <input name="user_photo" type="string" class="form-control" value="User Photo">
                                   </div>
-                              </div>
+                              </div> -->
+
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Bio</label>
 
                                   <div class="col-sm-9">
-                                      <input name="bio" type="text" class="form-control" placeholder=<%= @assistant.bio %>>
+                                      <input name="bio" type="text" class="form-control" value="<%= @assistant.bio %>">
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Facebook</label>
 
                                   <div class="col-sm-9">
-                                      <input name="facebook" type="string" class="form-control" placeholder=<%= @assistant.facebook %>>
+                                      <input name="facebook" type="string" class="form-control" value="<%= @assistant.facebook %>">
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Twitter</label>
 
                                   <div class="col-sm-9">
-                                      <input name="twitter" type="string" class="form-control" placeholder=<%= @assistant.twitter %>>
+                                      <input name="twitter" type="string" class="form-control" value="<%= @assistant.twitter %>">
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Instagram</label>
 
                                   <div class="col-sm-9">
-                                      <input name="instagram" type="string" class="form-control" placeholder=<%= @assistant.instagram %>>
+                                      <input name="instagram" type="string" class="form-control" value="<%= @assistant.instagram %>">
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Blog</label>
 
                                   <div class="col-sm-9">
-                                      <input name="blog" type="string" class="form-control" placeholder=<%= @assistant.blog %>>
+                                      <input name="blog" type="string" class="form-control" value="<%= @assistant.blog %>">
                                   </div>
                               </div>
 
@@ -201,30 +205,25 @@
                                   <label class="col-sm-3 control-label">Years of Experience</label>
 
                                   <div class="col-sm-9">
-                                      <input name="years_exp" type="integer" class="form-control" placeholder=<%= @assistant.years_exp %>>
+                                      <input name="years_exp" type="integer" class="form-control" value="<%= @assistant.years_exp %>">
                                   </div>
                               </div>
 
 
-                              <div class="form-group">
-                                  <label class="col-sm-3 control-label">Occupation</label>
-                                  <div class="col-sm-9">
-                                  <%= f.select "occupations", options_from_collection_for_select(@occupations, "id", "name") %>
-                                  </div>
-                                  </div>
+                              
                                       
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Car</label>
 
                                   <div class="col-sm-9">
-                                      <input name="car" type="boolean" class="form-control" placeholder=<%= @assistant.car %>>
+                                      <input name="car" type="boolean" class="form-control" value="<%= @assistant.car %>">
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">City</label>
 
                                   <div class="col-sm-9">
-                                      <input name="city_id" type="integer" class="form-control" placeholder=<%= @assistant.city_id %>>
+                                      <input name="city_id" type="integer" class="form-control" value="<%= @assistant.city_id %>">
                                   </div>
                               </div>
                               <div class="form-group">
