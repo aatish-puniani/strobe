@@ -18,47 +18,30 @@ class PhotographersController < ApplicationController
   def update
     photographer_id = params[:id]
     @photographer = Photographer.find_by(id: photographer_id)
-    @photographer.name = params[:name] unless params[:name].empty?
-    @photographer.company = params[:company] unless params[:company].empty?
-    @photographer.email = params[:email] unless params[:email].empty?
-    @photographer.mobile_number = params[:mobile_number] unless params[:mobile_number].empty?
-    @photographer.studio_number = params[:studio_number] unless params[:studio_number].empty?
-    @photographer.address = params[:address] unless params[:address].empty?
-    @photographer.clients = params[:clients] unless params[:clients].empty?
-    @photographer.url = params[:url] unless params[:url].empty?
-    # @photographer.user_photo = params[:user_photo] unless params[:user_photo].empty?
-    @photographer.bio = params[:bio] unless params[:bio].empty?
-    @photographer.facebook = params[:facebook] unless params[:facebook].empty?
-    @photographer.twitter = params[:twitter] unless params[:twitter].empty?
-    @photographer.instagram = params[:instagram] unless params[:instagram].empty?
-    @photographer.blog = params[:blog] unless params[:blog].empty?
-    @photographer.years_exp = params[:years_exp] unless params[:years_exp].empty?
-    @photographer.occupation_id = params[:occupation_id] unless params[:occupation_id].empty?
-    @photographer.city_id = params[:city_id] unless params[:city_id].empty?
-    # @photographer.update(
-    #   name: params[:name],
-    #   company: params[:company],
-    #   email: params[:email],
-    #   mobile_number: params[:mobile_number],
-    #   studio_number: params[:studio_number],
-    #   address: params[:address],
-    #   clients: params[:clients],
-    #   url: params[:url],
-    #   user_photo: params[:user_photo],
-    #   bio: params[:bio],
-    #   facebook: params[:facebook],
-    #   twitter: params[:twitter],
-    #   instagram: params[:instagram],
-    #   blog: params[:blog],
-    #   years_exp: params[:years_exp],
-    #   occupation_id: params[:occupation_id],
-    #   city_id: params[:city_id]
-    # )
-    if @photographer.save
+    if @photographer.update(
+      name: params[:name] || @photographer.name,
+      company: params[:company] || @photographer.company,
+      email: params[:email] || @photographer.email,
+      mobile_number: params[:mobile_number] || @photographer.mobile_number,
+      studio_number: params[:studio_number] || @photographer.studio_number,
+      address: params[:address] || @photographer.address,
+      clients: params[:clients] || @photographer.clients,
+      url: params[:url] || @photographer.url,
+      user_photo: params[:user_photo] || @photographer.user_photo,
+      bio: params[:bio] || @photographer.bio,
+      facebook: params[:facebook] || @photographer.facebook,
+      twitter: params[:twitter] || @photographer.twitter,
+      instagram: params[:instagram] || @photographer.instagram,
+      blog: params[:blog] || @photographer.blog,
+      years_exp: params[:years_exp] || @photographer.years_exp,
+      occupation_id: params[:occupation_id] || @photographer.occupation_id,
+      city_id: params[:city_id] || @photographer.city_id
+    )
       flash[:success] = "Profile successfully updated!"
       redirect_to "/photographers/#{@photographer.id}"
     else
-      redirect_to action: :show
+      p @photographer.errors.full_messages
+      redirect_to action: :edit
     end
   end
 
@@ -68,24 +51,5 @@ class PhotographersController < ApplicationController
     @photographer.destroy
     flash[:danger] = "Account successfully deleted!"
     redirect_to "/photographers"
-  end
-
-  def avatar_edit
-    photographer_id = params[:id]
-    @photographer = Photographer.find_by(id: photographer_id)
-  end
-
-  def avatar_update
-    photographer_id = params[:id]
-    @photographer = Photographer.find_by(id: photographer_id)
-    @photographer.update(
-      avatar: params[:avatar]
-    )
-    if @photographer.save
-      flash[:success] = "Profile successfully updated!"
-      redirect_to "/photographers/#{@photographer.id}"
-    else
-      redirect_to action: :show
-    end
   end
 end
