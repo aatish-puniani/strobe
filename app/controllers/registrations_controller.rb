@@ -26,4 +26,10 @@ class RegistrationsController < Devise::RegistrationsController
   def update
     super
   end
+
+    private
+
+  def photographer_params
+    params.permit(:avatar)
+  end
 end

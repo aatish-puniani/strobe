@@ -26,7 +26,7 @@ class PhotographersController < ApplicationController
     @photographer.address = params[:address] unless params[:address].empty?
     @photographer.clients = params[:clients] unless params[:clients].empty?
     @photographer.url = params[:url] unless params[:url].empty?
-    @photographer.user_photo = params[:user_photo] unless params[:user_photo].empty?
+    # @photographer.user_photo = params[:user_photo] unless params[:user_photo].empty?
     @photographer.bio = params[:bio] unless params[:bio].empty?
     @photographer.facebook = params[:facebook] unless params[:facebook].empty?
     @photographer.twitter = params[:twitter] unless params[:twitter].empty?
@@ -69,4 +69,5 @@ class PhotographersController < ApplicationController
     flash[:danger] = "Account successfully deleted!"
     redirect_to "/photographers"
   end
-end
+
+

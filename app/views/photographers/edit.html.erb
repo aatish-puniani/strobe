@@ -96,7 +96,7 @@
 
                         <!--/.row-box End-->
                         <div class="row">
-                          <%= form_tag "/photographers/#{@photographer.id}", method: :patch do %>
+                          <%= form_tag "/photographers/#{@photographer.id}", multipart: true, method: :patch do %>
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Name</label>
 
@@ -153,13 +153,15 @@
                                       <input name="url" type="string" class="form-control" placeholder=<%= @photographer.url %>>
                                   </div>
                               </div>
-                              <div class="form-group">
+                              <!-- <div class="form-group">
                                   <label class="col-sm-3 control-label">User Photo</label>
 
                                   <div class="col-sm-9">
                                       <input name="user_photo" type="string" class="form-control" placeholder=<%= @photographer.user_photo %>>
                                   </div>
-                              </div>
+                              </div> -->
+                              <%= file_field_tag :avatar %>
+
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Bio</label>
 
