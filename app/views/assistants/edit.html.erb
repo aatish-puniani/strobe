@@ -196,6 +196,7 @@
                                       <input name="blog" type="string" class="form-control" placeholder=<%= @assistant.blog %>>
                                   </div>
                               </div>
+
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Years of Experience</label>
 
@@ -203,13 +204,16 @@
                                       <input name="years_exp" type="integer" class="form-control" placeholder=<%= @assistant.years_exp %>>
                                   </div>
                               </div>
+
+
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Occupation</label>
-                                  
                                   <div class="col-sm-9">
-                                      <input name="occupation_id" type="integer" class="form-control" placeholder=<%= @assistant.occupation_id %>>
+                                  <%= f.select "occupations", options_from_collection_for_select(@occupations, "id", "name") %>
                                   </div>
-                              </div><div class="form-group">
+                                  </div>
+                                      
+                              <div class="form-group">
                                   <label class="col-sm-3 control-label">Car</label>
 
                                   <div class="col-sm-9">

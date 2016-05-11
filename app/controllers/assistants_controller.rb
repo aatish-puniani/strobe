@@ -13,6 +13,7 @@ class AssistantsController < ApplicationController
   def edit
     assistant_id = params[:id]
     @assistant = Assistant.find_by(id: assistant_id)
+    @occupations = Occupation.all
   end
 
   def update
@@ -35,7 +36,7 @@ class AssistantsController < ApplicationController
     @assistant.blog = params[:blog] unless params[:blog].empty?
     @assistant.years_exp = params[:years_exp] unless params[:years_exp].empty?
     @assistant.car = params[:car] unless params[:car].empty?
-    @assistant.occupation_id = params[:occupation_id] unless params[:occupation_id].empty?
+    # @assistant.occupation_id = params[:occupation_id] unless params[:occupation_id].empty?
     @assistant.city_id = params[:city_id] unless params[:city_id].empty?
     # if @assistant.update(
     #   name: params[:name],
