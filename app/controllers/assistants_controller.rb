@@ -2,23 +2,28 @@ class AssistantsController < ApplicationController
   def index
     @assistants = Assistant.all
     @occupations = Occupation.all
-    @citys = City.all
+    @cities = City.all
   end
 
   def show
     assistant_id = params[:id]
     @assistant = Assistant.find_by(id: assistant_id)
+    @occupations = Occupation.all
+    @cities = City.all
   end
 
   def edit
     assistant_id = params[:id]
     @assistant = Assistant.find_by(id: assistant_id)
     @occupations = Occupation.all
+    @cities = City.all
   end
 
   def update
     assistant_id = params[:id]
     @assistant = Assistant.find_by(id: assistant_id)
+    @occupations = Occupation.all
+    @cities = City.all
     if @assistant.update(
       name: params[:name] || @assistant.name,
       company: params[:company] || @assistant.company,

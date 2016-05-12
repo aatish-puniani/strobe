@@ -2,22 +2,28 @@ class PhotographersController < ApplicationController
   def index
     @photographers = Photographer.all
     @occupations = Occupation.all
-    @citys = City.all
+    @cities = City.all
   end
 
   def show
     photographer_id = params[:id]
     @photographer = Photographer.find_by(id: photographer_id)
+    @occupations = Occupation.all
+    @cities = City.all
   end
 
   def edit
     photographer_id = params[:id]
     @photographer = Photographer.find_by(id: photographer_id)
+    @occupations = Occupation.all
+    @cities = City.all
   end
 
   def update
     photographer_id = params[:id]
     @photographer = Photographer.find_by(id: photographer_id)
+    @occupations = Occupation.all
+    @cities = City.all
     if @photographer.update(
       name: params[:name] || @photographer.name,
       company: params[:company] || @photographer.company,
