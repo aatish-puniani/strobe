@@ -8,4 +8,5 @@ class Photographer < ActiveRecord::Base
   belongs_to :occupation
   belongs_to :city
   has_many :images
+  has_many :jobs
 end
