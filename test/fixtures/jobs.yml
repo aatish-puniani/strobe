@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  photographer_id: 1
+  description: MyText
+  city_id: 1
+  location: MyString
+  day_rate: 1
+  category_id: 1
+  occupation_id: 1
+  skill_id: 1
+  call_time: 2016-05-12 13:56:55
+  date: 2016-05-12
+  call_sheet: MyString
+
+two:
+  name: MyString
+  photographer_id: 1
+  description: MyText
+  city_id: 1
+  location: MyString
+  day_rate: 1
+  category_id: 1
+  occupation_id: 1
+  skill_id: 1
+  call_time: 2016-05-12 13:56:55
+  date: 2016-05-12
+  call_sheet: MyString
