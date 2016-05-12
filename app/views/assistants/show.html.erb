@@ -203,3 +203,12 @@
                                       <p><%= @assistant.city.name %></p>
                                   </div>
 
+                                  <label class="col-sm-3 control-label">Skills</label>
+
+                                  <div class="col-sm-9">
+                                      <ul>
+                                          <% @assistant.categories.each do |category| %>
+                                          <li><%= category.name %></li>
+                                          <% end %>
+                                          </ul>
+                                  </div>

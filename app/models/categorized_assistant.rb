@@ -1,4 +1,4 @@
 class CategorizedAssistant < ActiveRecord::Base
-  has_many :assistants
-  has_many :categories
+  belongs_to :category
+  belongs_to :assistant
 end
