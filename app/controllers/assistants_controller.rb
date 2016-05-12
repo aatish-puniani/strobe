@@ -3,6 +3,7 @@ class AssistantsController < ApplicationController
     @assistants = Assistant.all
     @occupations = Occupation.all
     @cities = City.all
+    @skills = Skill.all
   end
 
   def show
@@ -10,6 +11,7 @@ class AssistantsController < ApplicationController
     @assistant = Assistant.find_by(id: assistant_id)
     @occupations = Occupation.all
     @cities = City.all
+    @skills = Skill.all
   end
 
   def edit
@@ -17,6 +19,7 @@ class AssistantsController < ApplicationController
     @assistant = Assistant.find_by(id: assistant_id)
     @occupations = Occupation.all
     @cities = City.all
+    @skills = Skill.all
   end
 
   def update
@@ -24,6 +27,7 @@ class AssistantsController < ApplicationController
     @assistant = Assistant.find_by(id: assistant_id)
     @occupations = Occupation.all
     @cities = City.all
+    @skills = Skill.all
     if @assistant.update(
       name: params[:name] || @assistant.name,
       company: params[:company] || @assistant.company,
