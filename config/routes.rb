@@ -25,4 +25,11 @@ Rails.application.routes.draw do
   get '/jobs/:id/edit' => 'jobs#edit'
   patch '/jobs/:id' => 'jobs#update'
   delete '/jobs/:id' => 'jobs#destroy'
+
+  get '/avatars/new' => 'avatars#new'
+  post '/avatars' => 'avatars#create'
+  get '/avatars/:id' => 'avatars#show'
+  get '/avatars/:id/edit' => 'avatars#edit'
+  patch '/avatars/:id' => 'avatars#update'
+  delete '/avatars/:id' => 'avatars#destroy'
 end
