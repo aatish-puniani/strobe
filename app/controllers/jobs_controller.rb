@@ -16,14 +16,17 @@ class JobsController < ApplicationController
     @cities = City.all
     @job = Job.new(
       name: params[:name],
+      photographer_id: params[:photographer_id],
       description: params[:description],
+      city: params[:city],
       location: params[:location],
       day_rate: params[:day_rate],
       category: params[:category],
-      clients: params[:clients],
-      url: params[:url],
-      user_photo: params[:user_photo],
-      bio: params[:bio]
+      occupation: params[:occupation],
+      skill: params[:skill],
+      call_time: params[:call_time],
+      date: params[:date],
+      call_sheet: params[:call_sheet]
     )
     if @job.save
       flash[:success] = "Job successfully created!"
@@ -55,22 +58,17 @@ class JobsController < ApplicationController
     @cities = City.all
     if @job.update(
       name: params[:name] || @job.name,
-      company: params[:company] || @job.company,
-      # email: params[:email] || @job.email,
-      mobile_number: params[:mobile_number] || @job.mobile_number,
-      studio_number: params[:studio_number] || @job.studio_number,
-      address: params[:address] || @job.address,
-      clients: params[:clients] || @job.clients,
-      url: params[:url] || @job.url,
-      user_photo: params[:user_photo] || @job.user_photo,
-      bio: params[:bio] || @job.bio,
-      facebook: params[:facebook] || @job.facebook,
-      twitter: params[:twitter] || @job.twitter,
-      instagram: params[:instagram] || @job.instagram,
-      blog: params[:blog] || @job.blog,
-      years_exp: params[:years_exp] || @job.years_exp,
-      occupation_id: params[:occupation_id] || @job.occupation_id,
-      city_id: params[:city_id] || @job.city_id
+      photographer_id: params[:photographer_id] || @job.photographer_id,
+      description: params[:description] || @job.description,
+      city: params[:city] || @job.city,
+      location: params[:location] || @job.location,
+      day_rate: params[:day_rate] || @job.day_rate,
+      category: params[:category] || @job.category,
+      occupation: params[:occupation] || @job.occupation,
+      skill: params[:skill] || @job.skill,
+      call_time: params[:call_time] || @job.call_time,
+      date: params[:date] || @job.date,
+      call_sheet: params[:call_sheet] || @job.call_sheet
     )
       flash[:success] = "Profile successfully updated!"
       redirect_to "/jobs/#{@job.id}"
