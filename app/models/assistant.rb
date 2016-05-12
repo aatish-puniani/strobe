@@ -10,6 +10,6 @@ class Assistant < ActiveRecord::Base
   has_many :categorized_assistants
   has_many :categories, through: :categorized_assistants
   has_many :images
-  has_many :categorized_gears
-  has_many :gears, through: :categorized_gears
+  has_many :categorized_skills
+  has_many :skills, through: :categorized_skills
 end
