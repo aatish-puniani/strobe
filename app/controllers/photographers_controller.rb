@@ -19,6 +19,20 @@ class PhotographersController < ApplicationController
     @cities = City.all
   end
 
+  def avatar_update
+    photographer_id = params[:id]
+    @photographer = Photographer.find_by(id: photographer_id)
+    @photographer.avatar_update(
+      avatar: params[:avatar]
+    )
+    if @photographer.save
+      flash[:success] = "Photographer successfully updated!"
+      redirect_to "/photographers/#{@photographer.id}/edit"
+    else
+      redirect_to action: :edit
+    end
+  end
+
   def update
     photographer_id = params[:id]
     @photographer = Photographer.find_by(id: photographer_id)
@@ -33,7 +47,7 @@ class PhotographersController < ApplicationController
       address: params[:address] || @photographer.address,
       clients: params[:clients] || @photographer.clients,
       url: params[:url] || @photographer.url,
-      user_photo: params[:user_photo] || @photographer.user_photo,
+      # user_photo: params[:user_photo] || @photographer.user_photo,
       bio: params[:bio] || @photographer.bio,
       facebook: params[:facebook] || @photographer.facebook,
       twitter: params[:twitter] || @photographer.twitter,
@@ -58,4 +72,14 @@ class PhotographersController < ApplicationController
     flash[:danger] = "Account successfully deleted!"
     redirect_to "/photographers"
   end
+end
+
+private
+
+def set_photographer
+  @photographer = Photographer.find(params[:id])
+end
+
+def photographer_params
+  params.require(:photographer).permit(:name, :company, :mobile_number, :studio_number, :address, :clients, :url, :bio, :facebook, :twitter, :instagram, :blog, :years_exp, :occupation_id, :city_id, :avatar)
 end

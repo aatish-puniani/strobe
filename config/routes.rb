@@ -9,12 +9,14 @@ Rails.application.routes.draw do
   get '/assistants' => 'assistants#index'
   get '/assistants/:id' => 'assistants#show'
   get '/assistants/:id/edit' => 'assistants#edit'
+  patch '/assistants/avatarupdate' => 'assistants#avatar_update'
   patch '/assistants/:id' => 'assistants#update'
   delete '/assistants/:id' => 'assistants#destroy'
 
   get '/photographers' => 'photographers#index'
   get '/photographers/:id' => 'photographers#show'
   get '/photographers/:id/edit' => 'photographers#edit'
+  patch '/photographers/avatarupdate' => 'photographers#avatar_update'
   patch '/photographers/:id' => 'photographers#update'
   delete '/photographers/:id' => 'photographers#destroy'
 
@@ -26,9 +28,6 @@ Rails.application.routes.draw do
   patch '/jobs/:id' => 'jobs#update'
   delete '/jobs/:id' => 'jobs#destroy'
 
-  get '/avatars/new' => 'avatars#new'
-  post '/avatars' => 'avatars#create'
-  get '/avatars/:id' => 'avatars#show'
   get '/avatars/:id/edit' => 'avatars#edit'
   patch '/avatars/:id' => 'avatars#update'
   delete '/avatars/:id' => 'avatars#destroy'
