@@ -39,6 +39,8 @@
 </head>
 <body>
 
+  
+
 <div id="wrapper">
     <div class="header">
         <nav class="navbar   navbar-site navbar-default" role="navigation">
@@ -58,6 +60,7 @@
                             href="/photographers/sign_up">Sign Up</a></li>
                     <% else %>
                     <li><%= link_to "Log out", "/photographers/sign_out", method: :delete %></li>
+                    <li><%= link_to "My Page", "/photographers/#{@signed_in_photographer.id}", method: :get %></li>
                     <% end %>
                     </ul>
                 </div>
