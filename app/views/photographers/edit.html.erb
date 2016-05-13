@@ -204,15 +204,34 @@
                                   </div>
                               </div>
 
-                              <div class="form-group">
-                                  <label class="col-sm-3 control-label">Occupation</label>
-                              <%= select_tag "occupations", options_from_collection_for_select(@occupations, "id", "name") %>
-                              </div>
+                              
 
                               <div class="form-group">
-                                  <label class="col-sm-3 control-label">City</label>
-                                  <%= select_tag "cities", options_from_collection_for_select(@cities, "id", "name") %>
-                              </div>
+                                            <label class="col-md-3 control-label">Occupation</label>
+
+                                            <div class="col-md-8">
+                                                <select name="occupation" type="integer" class="form-control">
+                                                    <option value="0" selected="selected"> Select a occupation...</option>
+                                                    <option value="1">Photo Assistant</option>
+                                                    <option value="2">Photographer</option>
+                                                    <option value="3">Digital Tech</option>
+                                                    <option value="4">Producer</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">City</label>
+
+                                            <div class="col-md-8">
+                                                <select name="occupation" type="integer" class="form-control">
+                                                    <option value="0" selected="selected"> Select a city...</option>
+                                                    <option value="1">New York City</option>
+                                                    <option value="2">Los Angeles</option>
+                                                    <option value="3">Chicago</option>
+                                                </select>
+                                            </div>
+                                        </div>
 
                               <div class="form-group">
                                   <div class="col-sm-offset-3 col-sm-9">
