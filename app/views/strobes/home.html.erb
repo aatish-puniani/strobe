@@ -9,15 +9,20 @@
 
                     <div class="row search-row animated fadeInUp">
                         <div class="col-lg-4 col-sm-4 search-col relative locationicon">
-                            <i class="icon-location-2 icon-append"></i>
-                            <input type="text" name="country" id="autocomplete-ajax"
-                                   class="form-control locinput input-rel searchtag-input has-icon"
-                                   placeholder="city, state, or zip" value="">
+                            <select name="occupation" type="integer" class="form-control">
+                                                    <option value="0" selected="selected"> Select a city...</option>
+                                                    <option value="1">New York City</option>
+                                                    <option value="2">Los Angeles</option>
+                                                    <option value="3">Chicago</option>
+                                                </select>
 
                         </div>
-                        <div class="col-lg-4 col-sm-4 search-col relative"><i class="icon-docs icon-append"></i>
-                            <input type="text" name="ads" class="form-control has-icon"
-                                   placeholder="job title, keywords or company" value="">
+                        <div class="col-lg-4 col-sm-4 search-col relative">
+                            <select name="occupation" type="integer" class="form-control">
+                                                    <option value="0" selected="selected"> Select a type...</option>
+                                                    <option value="1">Photo Assistant</option>
+                                                    <option value="3">Digital Tech</option>
+                                                </select>
                         </div>
                         <div class="col-lg-4 col-sm-4 search-col">
                             <button class="btn btn-primary btn-search btn-block"><i class="icon-search"></i><strong>Find
