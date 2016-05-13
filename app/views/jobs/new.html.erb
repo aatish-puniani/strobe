@@ -20,60 +20,25 @@
                                             </div>
                                         </div>
 
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Call Time</label>
+
+                                            <div class="col-md-8">
+                                                <input name="call_time" placeholder="Call Time"
+                                                       class="form-control input-md" required="" type="time">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Date</label>
+
+                                            <div class="col-md-8">
+                                                <input name="date" placeholder="Date"
+                                                       class="form-control input-md" required="" type="date">
+                                            </div>
+                                        </div>
+
                                         <!-- Text input-->
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Job Description</label>
-
-                                            <div class="col-md-8">
-                                                <input name="description" placeholder="Job Description"
-                                                       class="form-control input-md" required="" type="text">
-                                            </div>
-                                        </div>
-
-                                        <!-- Select Basic -->
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Category</label>
-
-                                            <div class="col-md-8">
-                                                <select name="category-group" id="category-group" class="form-control">
-                                                    <option value="0" selected="selected"> Select a category...</option>
-                                                    <option value="111">Accounting</option>
-                                                    <option value="112">Administration &amp; Office Support</option>
-                                                    <option value="113">Agriculture, Animals &amp; Conservation</option>
-                                                    <option value="114">Architecture &amp; Design</option>
-                                                    <option value="115">Banking &amp; Financial Services</option>
-                                                    <option value="116">Communications, Advertising, Arts &amp; Media
-                                                    </option>
-                                                    <option value="117">Community Services</option>
-                                                    <option value="118">Construction</option>
-                                                    <option value="119">Customer Service &amp; Call Centre</option>
-                                                    <option value="123">Defence &amp; Protective Services</option>
-                                                    <option value="120">Education &amp; Training</option>
-                                                    <option value="121">Engineering</option>
-                                                    <option value="122">Executive &amp; General Management</option>
-                                                    <option value="130">Health &amp; Medical</option>
-                                                    <option value="124">Hospitality &amp; Tourism</option>
-                                                    <option value="125">Human Resources &amp; Recruitment</option>
-                                                    <option value="126">Information &amp; Communication Technology
-                                                        (ICT)
-                                                    </option>
-                                                    <option value="127">Insurance &amp; Superannuation</option>
-                                                    <option value="128">Legal</option>
-                                                    <option value="129">Manufacturing</option>
-                                                    <option value="131">Mining &amp; Energy</option>
-                                                    <option value="132">Real Estate &amp; Property</option>
-                                                    <option value="133">Retail</option>
-                                                    <option value="134">Sales</option>
-                                                    <option value="135">Science</option>
-                                                    <option value="136">Sport &amp; Recreation</option>
-                                                    <option value="137">Trades &amp; Services</option>
-                                                    <option value="138">Transport &amp; Logistics</option>
-                                                    <option value="Other"> Other</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <!-- Textarea -->
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="textarea">Job Description
 
@@ -84,68 +49,90 @@
                                                 <textarea style="height: 250px" class="form-control" id="textarea"
                                                           name="textarea">Job Description</textarea>
 
-                                                <span class="help-block">Describe the responsibilities ,  experience, skills, or education. </span>
+                                                <span class="help-block">Describe the job and what help you need. </span>
 
                                             </div>
                                         </div>
 
 
-                                        <!-- Select Basic -->
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="Location">Location </label>
+                                            <label class="col-md-3 control-label">City</label>
 
                                             <div class="col-md-8">
-                                                <input id="Location" name="Location" placeholder="City or Postcode"
-                                                       class="form-control input-md" required="" type="text">
-                                            </div>
-                                        </div>
-
-
-                                        <!-- Multiple Radios (inline) -->
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Add Type</label>
-
-                                            <div class="col-md-8">
-
-                                                <select class="form-control" name="type" id="type">
-                                                    <option selected="" value="FULLTIME" name="FULLTIME">Full-time
-                                                    </option>
-                                                    <option value="PARTTIME" name="PARTTIME">Part-time</option>
-                                                    <option value="TEMPORARY" name="TEMPORARY">Temporary</option>
-                                                    <option value="CONTRACT" name="CONTRACT">Contract</option>
-                                                    <option value="INTERNSHIP" name="INTERNSHIP">Internship</option>
-                                                    <option value="PERMANENT" name="PERMANENT">Permanent</option>
-                                                    <option value="Optional" name="Optional">Optional</option>
+                                                <select name="occupation" type="integer" class="form-control">
+                                                    <option value="0" selected="selected"> Select a city...</option>
+                                                    <option value="1">New York City</option>
+                                                    <option value="2">Los Angeles</option>
+                                                    <option value="3">Chicago</option>
                                                 </select>
-
-
                                             </div>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Location</label>
+
+                                            <div class="col-md-8">
+                                                <input name="location" placeholder="Location"
+                                                       class="form-control input-md" required="" type="string">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Genre</label>
+
+                                            <div class="col-md-8">
+                                                <select name="category_id" type="integer" class="form-control">
+                                                    <option value="0" selected="selected"> Select a genre...</option>
+                                                    <option value="1">Food</option>
+                                                    <option value="2">Fashion</option>
+                                                    <option value="3">Editorial</option>
+                                                    <option value="4">Product</option>
+                                                    <option value="6">Portrait</option>
+                                                    <option value="7">Architecture</option>
+                                                    <option value="8">Event</option>
+                                                    <option value="9">Animals</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Occupation</label>
+
+                                            <div class="col-md-8">
+                                                <select name="occupation" type="integer" class="form-control">
+                                                    <option value="0" selected="selected"> Select a occupation...</option>
+                                                    <option value="1">Photo Assistant</option>
+                                                    <option value="2">Photographer</option>
+                                                    <option value="3">Digital Tech</option>
+                                                    <option value="4">Producer</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Call Sheet</label>
+
+                                            <div class="col-md-8">
+                                                <input name="call_sheet" placeholder="Call Sheet"
+                                                       class="form-control input-md" required="" type="string">
+                                            </div>
+                                        </div>
+
+
+                                    
 
 
                                         <!-- Prepended text-->
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="Salary ">Salary </label>
+                                            <label class="col-md-3 control-label" for="day_rate">Day Rate</label>
 
                                             <div class="col-md-4">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">$</span>
-                                                    <input id="Salary " name="Salary " class="form-control"
-                                                           placeholder="Salary " required="" type="text">
+                                                    <input id="day_rate" name="day_rate" class="form-control"
+                                                           placeholder="Day Rate" required="" type="integer">
 
                                                     <div class="input-group-btn">
-
-
-                                                        <button type="button" class="btn btn-secondary dropdown-toggle"
-                                                                data-toggle="dropdown" aria-haspopup="true"
-                                                                aria-expanded="false">
-                                                            Type <span class="caret"></span>
-                                                        </button>
-                                                        <ul class="dropdown-menu ">
-                                                            <li><a class="dropdown-item">per hour</a></li>
-                                                            <li><a class="dropdown-item">per hour</a></li>
-                                                            <li><a class="dropdown-item">per month</a></li>
-                                                        </ul>
                                                     </div>
                                                 </div>
 
@@ -161,50 +148,7 @@
                                         </div>
 
 
-                                        <div class="content-subheading"><i class="icon-user fa"></i> <strong>Company
-                                            information</strong></div>
-
-                                        <!-- Text input-->
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label" for="textinput-name">Name</label>
-
-                                            <div class="col-md-8">
-                                                <input id="textinput-name" name="textinput-name"
-                                                       placeholder="Seller Name" class="form-control input-md"
-                                                       required="" type="text">
-                                            </div>
-                                        </div>
-
-                                        <!-- Appended checkbox -->
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label" for="seller-email"> Company
-                                                Email</label>
-
-                                            <div class="col-md-8">
-                                                <input id="Company-email" name="Company-email" class="form-control"
-                                                       placeholder="Email" required="" type="text">
-
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" value="">
-                                                        <small> Hide the phone number on this jobs.</small>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Text input-->
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label" for="seller-Number">Phone
-                                                Number</label>
-
-                                            <div class="col-md-8">
-                                                <input id="seller-Number" name="seller-Number"
-                                                       placeholder="Phone Number" class="form-control input-md"
-                                                       required="" type="text">
-                                            </div>
-                                        </div>
-
+                                        
 
                                         <div class="well">
                                             <h3><i class=" icon-certificate icon-color-1"></i> Make your Ad Premium
@@ -290,7 +234,7 @@
                                                 <label class="checkbox-inline" for="checkboxes-0">
                                                     <input name="checkboxes" id="checkboxes-0"
                                                            value="Remember above contact information." type="checkbox">
-                                                    Remember above contact information. </label>
+                                                    I agree to the Terms &amp; Conditions. </label>
                                             </div>
                                         </div>
 
