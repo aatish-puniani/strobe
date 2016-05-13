@@ -19,19 +19,12 @@ class PhotographersController < ApplicationController
     @cities = City.all
   end
 
-  def avatar_update
-    photographer_id = params[:id]
-    @photographer = Photographer.find_by(id: photographer_id)
-    @photographer.avatar_update(
-      avatar: params[:avatar]
-    )
-    if @photographer.save
-      flash[:success] = "Photographer successfully updated!"
-      redirect_to "/photographers/#{@photographer.id}/edit"
-    else
-      redirect_to action: :edit
-    end
+def avatar_update
+    
+    current_photographer.update(params.permit(:avatar))
+    
   end
+  
 
   def update
     photographer_id = params[:id]
