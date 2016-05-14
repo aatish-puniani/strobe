@@ -8,13 +8,14 @@
                                 <div class="collapse-box">
                                     
 
+
                                     <div class="panel-collapse collapse in">
                                         <ul class="acc-list">
                                             <li><a class="active" href="/assistants/#{@assistant.id}"><i class="icon-home"></i>
                                                 View Profile </a></li>
-                                            <li><a class="active" href="/assistants/#{@assistant.id}/edit"><i class="icon-home"></i>
+                                            <li><a class="active" href=<% link_to "/assistants/#{@assistant.id}/edit" %>>
                                                 Edit Profile </a></li>
-                                            <li><a class="active" href="/assistants/#{@assistant.id}"><i class="icon-home"></i>
+                                            <li><a class="active" href="/jobs">
                                                 View Jobs </a></li>
                                             
                                         </ul>

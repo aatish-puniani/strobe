@@ -1,1 +1,192 @@
-index.html.erb
+<div class="main-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 page-content">
+                    <div class="inner-box category-content">
+                        <h2 class="title-2 uppercase"><strong> <i class="icon-briefcase"></i>Jobs</strong></h2>
+
+                        <div class="row">
+                         <% @jobs.each do |job| %>
+                                            <label class="col-md-3 control-label">Job Name</label>
+
+                                            <div class="col-md-8">
+                                                <p><%= job.name %></p>
+                                            </div>
+                                      
+
+                                            <label class="col-md-3 control-label">Call Time</label>
+
+                                            <div class="col-md-8">
+                                                <p><%= job.call_time %></p>
+                                            </div>
+
+                                        
+                                            <label class="col-md-3 control-label">Date</label>
+
+                                            <div class="col-md-8">
+                                                <p><%= job.date %></p>
+                                            </div>
+
+                                        <!-- Text input-->
+                                        
+                                            <label class="col-md-3 control-label" for="textarea">Job Description</label>
+
+                                            <div class="col-md-8">
+                                            <p><%= job.description %></p>
+                                            </div>
+
+                                            <label class="col-md-3 control-label">City</label>
+
+                                            <div class="col-md-8">
+                                            <p><%= job.city.name %></p>
+                                            </div>
+
+                                        
+                                            <label class="col-md-3 control-label">Location</label>
+
+                                            <div class="col-md-8">
+                                            <p><%= job.location %></p>
+                                            </div>
+
+                                        
+                                            <label class="col-md-3 control-label">Genre</label>
+
+                                            <div class="col-md-8">
+                                            <p><%= job.category.name %></p>
+                                            </div>
+
+                                        
+                                            <label class="col-md-3 control-label">Occupation</label>
+
+                                            <div class="col-md-8">
+                                            <p><%= job.occupation.name %></p>
+                                            </div>
+
+                                        
+                                            <label class="col-md-3 control-label">Call Sheet</label>
+
+                                            <div class="col-md-8">
+                                            <p><%= job.call_sheet %></p>
+                                            </div>
+
+                                        
+                                            <label class="col-md-3 control-label" for="day_rate">Day Rate</label>
+
+                                            <div class="col-md-8">
+                                            <p><%= job.day_rate %></p>
+                                            </div>
+
+
+                                            </div>
+                                            <!-- <div class="col-md-4">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox">
+                                                        Negotiable </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        
+
+                                        <div class="well">
+                                            <h3><i class=" icon-certificate icon-color-1"></i> Make your Ad Premium
+                                            </h3>
+
+                                            <p>Premium jobs help promote their service by getting their ads more
+                                                visibility with more
+                                                job candidate what they want faster. <a href="help.html">Learn more</a>
+                                            </p>
+
+                                            
+                                                <table class="table table-hover checkboxtable">
+                                                    <tr>
+                                                        <td>
+                                                            <div class="radio">
+                                                                <label>
+                                                                    <input type="radio" name="optionsRadios"
+                                                                           id="optionsRadios0" value="option0" checked>
+                                                                    <strong>Regular List </strong> </label>
+                                                            </div>
+                                                        </td>
+                                                        <td><p>$00.00</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="radio">
+                                                                <label>
+                                                                    <input type="radio" name="optionsRadios"
+                                                                           id="optionsRadios1" value="option1">
+                                                                    <strong>Urgent Jobs </strong> </label>
+                                                            </div>
+                                                        </td>
+                                                        <td><p>$10.00</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="radio">
+                                                                <label>
+                                                                    <input type="radio" name="optionsRadios"
+                                                                           id="optionsRadios2" value="option2">
+                                                                    <strong>Top of the Page Ad </strong> </label>
+                                                            </div>
+                                                        </td>
+                                                        <td><p>$20.00</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="radio">
+                                                                <label>
+                                                                    <input type="radio" name="optionsRadios"
+                                                                           id="optionsRadios3" value="option3">
+                                                                    <strong>Top of the Page Ad + Urgent Ad </strong>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td><p>$40.00</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            
+                                                                <div class="col-md-8">
+                                                                    <select class="form-control" name="Method"
+                                                                            id="PaymentMethod">
+                                                                        <option value="2">Select Payment Method</option>
+                                                                        <option value="3">Credit / Debit Card</option>
+                                                                        <option value="5">Paypal</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td><p><strong>Payable Amount : $40.00</strong></p></td>
+                                                    </tr>
+                                                </table>
+
+                                            </div>
+                                        </div>
+
+                                        <!-- terms -->
+                                        <!-- 
+                                            <label class="col-md-3 control-label">Terms</label>
+
+                                            <div class="col-md-8">
+                                                <label class="checkbox-inline" for="checkboxes-0">
+                                                    <input name="checkboxes" id="checkboxes-0"
+                                                           value="Remember above contact information." type="checkbox">
+                                                    I agree to the Terms &amp; Conditions. </label>
+                                            </div>
+                                        </div> -->
+
+                                        <!-- Button  -->
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                              <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
