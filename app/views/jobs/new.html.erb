@@ -6,6 +6,7 @@
                         <h2 class="title-2 uppercase"><strong> <i class="icon-briefcase"></i> Post a Job </strong></h2>
 
                         <div class="row">
+                         <%= form_tag "/jobs/#{@job.id}", method: :post do %>
                             <div class="col-sm-12">
                                 <form class="form-horizontal">
                                     <fieldset>
@@ -47,13 +48,14 @@
                                             <div class="col-md-8">
 
                                                 <textarea style="height: 250px" class="form-control" id="textarea"
-                                                          name="textarea">Job Description</textarea>
+                                                          name="textarea" placeholder="Job Description"></textarea>
 
                                                 <span class="help-block">Describe the job and what help you need. </span>
 
                                             </div>
                                         </div>
 
+                                           
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">City</label>
@@ -138,7 +140,7 @@
 
 
                                             </div>
-                                            <div class="col-md-4">
+                                            <!-- <div class="col-md-4">
                                                 <div class="checkbox">
                                                     <label>
                                                         <input type="checkbox">
@@ -227,7 +229,7 @@
                                         </div>
 
                                         <!-- terms -->
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <label class="col-md-3 control-label">Terms</label>
 
                                             <div class="col-md-8">
@@ -236,18 +238,24 @@
                                                            value="Remember above contact information." type="checkbox">
                                                     I agree to the Terms &amp; Conditions. </label>
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <!-- Button  -->
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label"></label>
+                                        
 
-                                            <div class="col-md-8"><a href="posting-success.html" id="button1id"
-                                                                     class="btn btn-success btn-lg">Submit</a></div>
-                                        </div>
+
+
+                                        <div class="form-group">
+                                  <div class="col-md-8">
+                                      <button type="submit" class="btn btn-success btn-lg">Submit</button>
+                                  </div>
+                              </div>
+                              <% end %>
+
                                     </fieldset>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
+              

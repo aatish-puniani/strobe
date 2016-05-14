@@ -1,0 +1,129 @@
+<div class="main-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 page-content">
+                    <div class="inner-box category-content">
+                        <h2 class="title-2 uppercase"><strong> <i class="icon-briefcase"></i> Job Details </strong></h2>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                
+
+                                        <!-- Text input-->
+                                      
+                                            <label class="col-md-3 control-label">Job Name</label>
+
+                                            <div class="col-sm-9">
+                                      <p><%= @job.name %></p>
+                                  </div>
+
+                                        
+                                            <label class="col-md-3 control-label">Call Time</label>
+
+                                            <div class="col-sm-9">
+                                      <p><%= @job.call_time %></p>
+                                  </div>
+
+                                        
+                                            <label class="col-md-3 control-label">Date</label>
+
+                                            <div class="col-sm-9">
+                                      <p><%= @job.date %></p>
+                                  </div>
+
+                                        <!-- Text input-->
+                                        
+                                            <label class="col-md-3 control-label" for="textarea">Job Description
+
+                                            </label>
+
+                                            <div class="col-sm-9">
+                                      <p><%= @job.description %></p>
+                                  </div>
+
+
+                                        
+                                            <label class="col-md-3 control-label">City</label>
+
+                                            <div class="col-sm-9">
+                                      <p><%= @job.city.name %></p>
+                                  </div>
+
+                                        
+                                            <label class="col-md-3 control-label">Location</label>
+
+                                            <div class="col-sm-9">
+                                      <p><%= @job.location %></p>
+                                  </div>
+
+                                        
+                                            <label class="col-md-3 control-label">Genre</label>
+
+                                            <div class="col-sm-9">
+                                      <p><%= @job.category.name %></p>
+                                  </div>
+
+                                        
+                                            <label class="col-md-3 control-label">Occupation</label>
+
+                                            <div class="col-sm-9">
+                                      <p><%= @job.occupation.name %></p>
+                                  </div>
+
+                                        
+                                            <label class="col-md-3 control-label">Call Sheet</label>
+
+                                            <div class="col-sm-9">
+                                      <p><%= @job.call_sheet %></p>
+                                  </div>
+
+
+                                    
+
+
+                                        <!-- Prepended text-->
+                                        
+                                            <label class="col-md-3 control-label" for="day_rate">Day Rate</label>
+
+                                            <div class="col-sm-9">
+                                      <p><%= @job.day_rate %></p>
+                                      
+                                  </div>
+
+
+                                        
+
+                               </div>
+                               </div>
+                               </div>
+                               </div>
+                               </div>
+                               </div>
+                               </div>
+                                       
+                            </div>
+                        </div>
+                    </div>
+<style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+<div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvYLTO7Ey_u8qax0-9V1do4BDdDAXoc9A&callback=initMap"
+    async defer></script>
+                

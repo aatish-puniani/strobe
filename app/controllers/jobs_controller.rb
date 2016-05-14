@@ -3,20 +3,22 @@ class JobsController < ApplicationController
     @jobs = Job.all
     @occupations = Occupation.all
     @cities = City.all
+    @categories = Category.all
   end
 
   def new
     @job = Job.new
     @occupations = Occupation.all
     @cities = City.all
+    @categories = Category.all
   end
 
   def create
     @occupations = Occupation.all
     @cities = City.all
+    @categories = Category.all
     @job = Job.new(
       name: params[:name],
-      photographer_id: params[:photographer_id],
       description: params[:description],
       city_id: params[:city_id],
       location: params[:location],
@@ -42,6 +44,7 @@ class JobsController < ApplicationController
     @job = Job.find_by(id: job_id)
     @occupations = Occupation.all
     @cities = City.all
+    @categories = Category.all
   end
 
   def edit
@@ -49,6 +52,7 @@ class JobsController < ApplicationController
     @job = Job.find_by(id: job_id)
     @occupations = Occupation.all
     @cities = City.all
+    @categories = Category.all
   end
 
   def update
@@ -56,6 +60,7 @@ class JobsController < ApplicationController
     @job = Job.find_by(id: job_id)
     @occupations = Occupation.all
     @cities = City.all
+    @categories = Category.all
     if @job.update(
       name: params[:name] || @job.name,
       photographer_id: params[:photographer_id] || @job.photographer_id,
