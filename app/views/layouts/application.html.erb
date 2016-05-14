@@ -60,7 +60,7 @@
                             href="/assistants/sign_up">Sign Up</a></li>
                     <% else %>
                     <li><%= link_to "Log out", "/assistants/sign_out", method: :delete %></li>
-                    <li><%= link_to "My Page", "/assistants", method: :get %></li>
+                    <li><%= link_to "My Page", "/assistants/#{@signed_in_assistant.id}", method: :get %></li>
                     <% end %>
                     </ul>
                 </div>
