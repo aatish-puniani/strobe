@@ -47,11 +47,12 @@
                     <div class="inner-box">
                         <div class="row">
                             <div class="col-md-5 col-xs-4 col-xxs-12">
-                                <h3 class="no-padding text-center-480 useradmin"><a href=""><img class="userImg"
-                                alt="user" <%= image_tag("user.jpg") %>
+                                <button type="button" class="btn" data-toggle="modal" data-target=".bs-example-modal-sm">
+                                <%= image_tag (@assistant.avatar.url(:thumb)) %>
+                              </button>
                                 
-                                <%= @assistant.name ? @assistant.name : nil %>
-                                </a></h3>
+                                <h3 class="no-padding text-center-480 useradmin"><%= @assistant.name ? @assistant.name : nil %></h3>
+                                
                             </div>
                             <div class="col-md-7 col-xs-8 col-xxs-12">
                                 <div class="header-data text-center-xs">
@@ -215,10 +216,10 @@
                                             <div class="col-md-8">
                                                 <select name="occupation" type="integer" class="form-control">
                                                     <option value="0" selected="selected"> Select a occupation...</option>
-                                                    <option value="1">Photo Assistant</option>
-                                                    <option value="2">Photographer</option>
-                                                    <option value="3">Digital Tech</option>
-                                                    <option value="4">Producer</option>
+                                                    <option value="1">First Assistant</option>
+                                                    <option value="2">Second Assistant</option>
+                                                    <option value="3">Third Assistant</option>
+                                                    <option value="4">Digital Tech</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -278,3 +279,30 @@
         <!--/.container-->
     </div>
     <!-- /.main-container -->
+
+
+      <!--  modal -->
+
+
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-body">
+        <% if current_photographer %>
+          <%= form_tag "/photographers/avatarupdate", multipart: true, method: :patch do %>
+            <%= file_field_tag :avatar %>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <%= submit_tag "Change Avatar", class: "btn btn-primary" %>
+          <% end %>
+        <% elsif current_assistant %>
+          <%= form_tag "/assistants/avatarupdate", multipart: true, method: :patch do %>
+            <%= file_field_tag :avatar %>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <%= submit_tag "Change Avatar", class: "btn btn-primary" %>
+          <% end %>
+        <% end %>
+      </div>  
+    </div>
+  </div>
+</div>

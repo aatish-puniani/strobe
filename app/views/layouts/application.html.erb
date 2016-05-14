@@ -57,10 +57,10 @@
                     <% if current_photographer == nil && current_assistant == nil %>
                         <li><a href="/login">Login</a></li>
                         <li class="postadd"><a class="btn btn-block   btn-border btn-post btn-danger"
-                            href="/photographers/sign_up">Sign Up</a></li>
+                            href="/assistants/sign_up">Sign Up</a></li>
                     <% else %>
-                    <li><%= link_to "Log out", "/photographers/sign_out", method: :delete %></li>
-                    <li><%= link_to "My Page", "/photographers/#{@signed_in_photographer.id}", method: :get %></li>
+                    <li><%= link_to "Log out", "/assistants/sign_out", method: :delete %></li>
+                    <li><%= link_to "My Page", "/assistants", method: :get %></li>
                     <% end %>
                     </ul>
                 </div>

@@ -25,6 +25,10 @@ class AssistantsController < ApplicationController
     @skills = Skill.all
   end
 
+  def avatar_update
+    current_assistant.update(params.permit(:avatar)) 
+  end
+
   def update
     assistant_id = params[:id]
     @assistant = Assistant.find_by(id: assistant_id)
@@ -47,6 +51,7 @@ class AssistantsController < ApplicationController
       instagram: params[:instagram] || @assistant.instagram,
       blog: params[:blog] || @assistant.blog,
       years_exp: params[:years_exp] || @assistant.years_exp,
+      occupation_id: params[:occupation_id] || @assistant.occupation_id,
       car: params[:car] || @assistant.car,
       city_id: params[:city_id] || @assistant.city_id
     )
@@ -65,4 +70,14 @@ class AssistantsController < ApplicationController
     flash[:danger] = "Account successfully deleted!"
     redirect_to "/assistants"
   end
+end
+
+private
+
+def set_assistant
+  @assistant = Assistant.find(params[:id])
+end
+
+def assistant_params
+  params.require(:assistant).permit(:name, :company, :phone_number, :address, :day_rate, :worked_with, :url, :bio, :facebook, :twitter, :instagram, :blog, :years_exp, :occupation_id, :city_id, :avatar)
 end
