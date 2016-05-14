@@ -38,7 +38,7 @@ class AssistantsController < ApplicationController
     @categories = Category.all
     if @assistant.update(
       name: params[:name] || @assistant.name,
-      company: params[:company] || @assistant.company,
+      # company: params[:company] || @assistant.company,
       # email: params[:email] || @assistant.email,
       phone_number: params[:phone_number] || @assistant.phone_number,
       address: params[:address] || @assistant.address,
@@ -79,5 +79,5 @@ def set_assistant
 end
 
 def assistant_params
-  params.require(:assistant).permit(:name, :company, :phone_number, :address, :day_rate, :worked_with, :url, :bio, :facebook, :twitter, :instagram, :blog, :years_exp, :occupation_id, :city_id, :avatar)
+  params.require(:assistant).permit(:name, :phone_number, :address, :day_rate, :worked_with, :url, :bio, :facebook, :twitter, :instagram, :blog, :years_exp, :occupation_id, :city_id, :avatar)
 end
