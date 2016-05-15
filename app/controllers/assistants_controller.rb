@@ -7,14 +7,12 @@ class AssistantsController < ApplicationController
     @skills = Skill.all
 
     if params[:city]
-      @city = City.find(params[:city])
+      @assistants = City.find_by(name: params[:city]).assistants
     end
 
     if params[:occupation]
-      @occupation = Occupation.find(params[:occupation])
+      @assistants = Occupation.find_by(name: params[:occupation]).assistants
     end
-
-    
   end
 
   def show

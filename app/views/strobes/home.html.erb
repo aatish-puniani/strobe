@@ -12,7 +12,7 @@
                                 <select name="city" type="integer" class="form-control">
                                                         <option disabled selected="selected"> Select a city...</option>
                                                         <% @cities.each do |city| %>
-                                                            <option value="<%= city.id %>"><%= city.name %></option>
+                                                            <option value="<%= city.name %>"><%= city.name %></option>
                                                         <% end %>
                                                     </select>
                                             </div>
@@ -21,7 +21,7 @@
                                 <select name="occupation" type="integer" class="form-control">
                                                         <option disabled selected="selected"> Select a type...</option>
                                                         <% @occupations.each do |occupation| %>
-                                                            <option value="<%= occupation.id %>"><%= occupation.name %></option>
+                                                            <option value="<%= occupation.name %>"><%= occupation.name %></option>
                                                         <% end %>
                                                     </select>
                             </div>
