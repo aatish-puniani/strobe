@@ -13,6 +13,8 @@ class AssistantsController < ApplicationController
     if params[:occupation]
       @occupation = Occupation.find(params[:occupation])
     end
+
+    
   end
 
   def show

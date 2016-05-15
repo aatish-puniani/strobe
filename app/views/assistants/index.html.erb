@@ -283,7 +283,7 @@
                         <div class="adds-wrapper jobs-list">
                             <div class="item-list job-item">
 
-                            <% @assistants.each do |assistant| %>
+                            <% @assistants.find_each do |assistant| %>
                                 <div class="col-sm-1  col-xs-2 no-padding photobox">
                                     <div class="add-image"><a href=""><img class="thumbnail no-margin"
                                                                            alt="user" <%= image_tag (assistant.avatar.url(:thumb)) %></a></div>
