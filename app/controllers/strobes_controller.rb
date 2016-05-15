@@ -2,6 +2,8 @@ class StrobesController < ApplicationController
   def home
     @photographers = Photographer.all
     @assistants = Assistant.all
+    @cities = City.all
+    @occupations = Occupation.all
     CommunicationsHelper::Text.send_twilio
   end
 

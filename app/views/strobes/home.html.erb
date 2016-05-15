@@ -6,31 +6,31 @@
                     <h1 class="intro-title animated fadeInDown"> Find the Right Assistant </h1>
 
                     <p class="sub animateme fittext3 animated fadeIn"> Find the best assistants available in your area. </p>
+                    <form action="/assistants" method="get">
+                        <div class="row search-row animated fadeInUp">
+                            <div class="col-lg-4 col-sm-4 search-col relative locationicon">
+                                <select name="city" type="integer" class="form-control">
+                                                        <option disabled selected="selected"> Select a city...</option>
+                                                        <% @cities.each do |city| %>
+                                                            <option value="<%= city.id %>"><%= city.name %></option>
+                                                        <% end %>
+                                                    </select>
+                                            </div>
 
-                    <div class="row search-row animated fadeInUp">
-                        <div class="col-lg-4 col-sm-4 search-col relative locationicon">
-                            <select name="city" type="integer" class="form-control">
-                                                    <option value="0" selected="selected"> Select a city...</option>
-                                                    <option value="1">New York City</option>
-                                                    <option value="2">Los Angeles</option>
-                                                    <option value="3">Chicago</option>
-                                                </select>
-
+                            <div class="col-lg-4 col-sm-4 search-col relative">
+                                <select name="occupation" type="integer" class="form-control">
+                                                        <option disabled selected="selected"> Select a type...</option>
+                                                        <% @occupations.each do |occupation| %>
+                                                            <option value="<%= occupation.id %>"><%= occupation.name %></option>
+                                                        <% end %>
+                                                    </select>
+                            </div>
+                            <div class="col-lg-4 col-sm-4 search-col">
+                                <button type="submit" class="btn btn-primary btn-search btn-block"><i class="icon-search"></i><strong>Find
+                                    Assistants</strong></button>
+                            </div>
                         </div>
-                        <div class="col-lg-4 col-sm-4 search-col relative">
-                            <select name="occupation" type="integer" class="form-control">
-                                                    <option value="0" selected="selected"> Select a type...</option>
-                                                    <option value="5">First Assistant</option>
-                                                    <option value="6">Second Assistant</option>
-                                                    <option value="7">Third Assistant</option>
-                                                    <option value="3">Digital Tech</option>
-                                                </select>
-                        </div>
-                        <div class="col-lg-4 col-sm-4 search-col">
-                            <button class="btn btn-primary btn-search btn-block"><i class="icon-search"></i><strong>Find
-                                Assistants</strong></button>
-                        </div>
-                    </div>
+                    </form>
                     <% if current_photographer == nil && current_assistant == nil %>
                     <div class="resume-up">
                         <a><i class="icon-doc-4"></i></a> <a><b>Create and Account</b></a> to get on Strobe!

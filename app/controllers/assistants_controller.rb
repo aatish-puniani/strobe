@@ -5,6 +5,14 @@ class AssistantsController < ApplicationController
     @categories = Category.all
     @cities = City.all
     @skills = Skill.all
+
+    if params[:city]
+      @city = City.find(params[:city])
+    end
+
+    if params[:occupation]
+      @occupation = Occupation.find(params[:occupation])
+    end
   end
 
   def show
