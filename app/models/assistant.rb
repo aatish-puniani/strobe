@@ -9,7 +9,8 @@ class Assistant < ActiveRecord::Base
   belongs_to :city
   has_many :categorized_assistants
   has_many :categories, through: :categorized_assistants
-  has_many :images
+  has_many :categorized_images
+  has_many :images, through: :categorized_images
   has_many :categorized_skills
   has_many :skills, through: :categorized_skills
 end
