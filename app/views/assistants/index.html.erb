@@ -4,28 +4,30 @@
             <div class="col-sm-3">
                 <input class="form-control keyword" type="text" placeholder="Assistant Name">
             </div>
+            <form action="/assistants" method="get">
             <div class="col-sm-3">
-                <select class="form-control" name="occupation" id="search-category">
-                    <option selected="selected" value="">Select a city...</option>
-                    <option value="1">New York City</option>
-                    <option value="2">Los Angeles</option>
-                    <option value="3">Chicago</option>
-                  </select>
+                <select name="city" type="integer" class="form-control">
+                                          <option disabled selected="selected"> Select a city...</option>
+                                          <% @cities.each do |city| %>
+                                              <option value="<%= city.id %>"><%= city.name %></option>
+                                          <% end %>
+                                      </select>
+            </div>
+
+            <div class="col-sm-3">
+                <select name="occupation" type="integer" class="form-control">
+                                        <option disabled selected="selected"> Select a type...</option>
+                                        <% @occupations.each do |occupation| %>
+                                            <option value="<%= occupation.id %>"><%= occupation.name %></option>
+                                        <% end %>
+                                    </select>
             </div>
             <div class="col-sm-3">
-                <select class="form-control" name="occupation" id="id-location">
-                    <option selected="selected" value="">Select a type...</option>
-                    <option value="5">First Assistant</option>
-                    <option value="6">Second Assistant</option>
-                    <option value="7">Third Assistant</option>
-                    <option value="3">Digital Tech</option>
-                </select>
-            </div>
-            <div class="col-sm-3">
-                <button class="btn btn-block btn-primary  "> Find Assistants <i class="fa fa-search"></i></button>
+                <button type="submit" class="btn btn-block btn-primary  "> Find Assistants <i class="fa fa-search"></i></button>
             </div>
         </div>
     </div>
+    </form>
     <!-- /.search-row -->
     <div class="main-container">
         <div class="container">
