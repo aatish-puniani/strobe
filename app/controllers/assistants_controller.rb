@@ -79,5 +79,5 @@ def set_assistant
 end
 
 def assistant_params
-  params.require(:assistant).permit(:name, :phone_number, :address, :day_rate, :worked_with, :url, :bio, :facebook, :twitter, :instagram, :blog, :years_exp, :occupation_id, :city_id, :avatar)
+  params.require(:assistant).permit(:name, :phone_number, :address, :day_rate, :worked_with, :url, :bio, :facebook, :twitter, :instagram, :blog, :years_exp, :occupation_id, :car, :city_id, :avatar)
 end

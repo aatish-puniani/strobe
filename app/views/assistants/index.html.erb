@@ -286,13 +286,14 @@
                             <% @assistants.each do |assistant| %>
                                 <div class="col-sm-1  col-xs-2 no-padding photobox">
                                     <div class="add-image"><a href=""><img class="thumbnail no-margin"
-                                                                           alt="user" <%= image_tag (assistant.avatar.url(:thumb)) %>></a></div>
+                                                                           alt="user" <%= image_tag (assistant.avatar.url(:thumb)) %></a></div>
                                 </div>
                                 <!--/.photobox-->
                                 <div class="col-sm-10  col-xs-10  add-desc-box">
                                     <div class="add-details jobs-item">
-                                        <h5 class="company-title"><%= assistant.name %></h5>
-                                        <h4 class="job-title"><%= assistant.occupation.name %></h4>
+                                    <h4 class="company-title"><%= assistant.occupation.name %></h4>
+                                        <h4 class="job-title"><%= assistant.name %></h4>
+                                        
                                         <span class="info-row">  <span class="item-location"><i
                                                 class="fa fa-map-marker"></i> <%= assistant.city.name %> </span> <span class="date"><i
                                                 class=" icon-clock"> </i>Years Exp: <%= assistant.years_exp %></span><span class=" salary"> <i

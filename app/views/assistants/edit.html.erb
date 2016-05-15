@@ -289,20 +289,13 @@
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-body">
-        <% if current_photographer %>
-          <%= form_tag "/photographers/avatarupdate", multipart: true, method: :patch do %>
-            <%= file_field_tag :avatar %>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <%= submit_tag "Change Avatar", class: "btn btn-primary" %>
-          <% end %>
-        <% elsif current_assistant %>
+      
           <%= form_tag "/assistants/avatarupdate", multipart: true, method: :patch do %>
             <%= file_field_tag :avatar %>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <%= submit_tag "Change Avatar", class: "btn btn-primary" %>
           <% end %>
-        <% end %>
       </div>  
     </div>
-  </div>
+</div>
 </div>
