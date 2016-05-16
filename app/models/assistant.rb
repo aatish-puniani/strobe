@@ -13,21 +13,21 @@ class Assistant < ActiveRecord::Base
   has_many :images, through: :categorized_images
   has_many :categorized_skills
   has_many :skills, through: :categorized_skills
-  validates :name, presence: true
-  validates :phone_number, presence: true                      
-  validates :address, presence: true                 
-  validates :day_rate, presence: true                  
-  validates :worked_with, presence: true                     
-  validates :url, presence: true             
-  validates :bio, presence: true             
-  validates :facebook, presence: true                  
-  validates :twitter, presence: true                 
-  validates :instagram, presence: true                   
-  validates :blog, presence: true             
-  validates :years_exp, presence: true                   
-  validates :occupation_id, presence: true                       
-  validates :car, presence: true             
-  validates :city_id, presence: true
+  validates :email, presence: true
+  # validates :phone_number, presence: true                      
+  # validates :address, presence: true                 
+  # validates :day_rate, presence: true                  
+  # validates :worked_with, presence: true                     
+  # validates :url, presence: true             
+  # validates :bio, presence: true             
+  # validates :facebook, presence: true                  
+  # validates :twitter, presence: true                 
+  # validates :instagram, presence: true                   
+  # validates :blog, presence: true             
+  # validates :years_exp, presence: true                   
+  # validates :occupation_id, presence: true                       
+  # validates :car, presence: true             
+  # validates :city_id, presence: true
 end
 
 

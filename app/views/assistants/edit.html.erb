@@ -215,13 +215,15 @@
                                             <label class="col-md-3 control-label">Occupation</label>
 
                                             <div class="col-md-8">
-                                                <select name="occupation" type="integer" class="form-control">
+                                              <%= select_tag :occupation_id, options_from_collection_for_select(@occupations, :id, :name) %>
+                                                <!-- <select name="occupation" type="integer" class="form-control">
                                                     <option value="0" selected="selected"> Select a occupation...</option>
                                                     <option value="1">First Assistant</option>
                                                     <option value="2">Second Assistant</option>
                                                     <option value="3">Third Assistant</option>
                                                     <option value="4">Digital Tech</option>
-                                                </select>
+                                                </select> -->
+
                                             </div>
                                         </div>
 
@@ -238,7 +240,7 @@
                                             </div>
                                         </div>
 
-                              <div class="form-group">
+                              <div class="form-group row">
                                   <label class="col-sm-3 control-label">Car</label>
 
                                   <div class="col-sm-9">
@@ -249,7 +251,10 @@
 
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Skills</label>
-                                <%= check_box_tag "skills", options_from_collection_for_select(@skills, "id", "name") %>
+                                  <% @skills.each do |skill| %>
+                                    <%= check_box_tag "skill_ids[]", skill.id, 0 %>
+                                    <%= label_tag skill.name %>
+                                  <% end %>
                               </div>
 
                               <div class="form-group">
