@@ -12,7 +12,7 @@
 
     $scope.updateAssistant = function(inputAssistantName, inputAssistantPhoneNumber, inputAssistantAddress, inputAssistantDayRate,inputAssistantWorkedWith,
         inputAssistantUrl, inputAssistantBio, inputAssistantTwitter, inputAssistantInstagram, inputAssistantYearsExp,
-        inputAssistantCar, inputAssistantOccupationId, inputAssistantBlog, inputAssistantFacebook, inputAssistantCityId, inputAssistantAvatar)
+        inputAssistantCar, inputAssistantOccupationId, inputAssistantBlog, inputAssistantFacebook, inputAssistantCityId, inputAssistantAvatar) {
       var updateAssistant = {
         name: inputAssistantName,
         phone_number: inputAssistantPhoneNumber,
@@ -29,7 +29,7 @@
         blog: inputAssistantBlog,
         facebook: inputAssistantFacebook,
         city_id: inputAssistantCityId,
-        avatar: inputAssistantAvatar,
+        avatar: inputAssistantAvatar
       };
       $http.patch('/api/v1/assistants.json', updateAssistant).then(function(response) {
         console.log(response);

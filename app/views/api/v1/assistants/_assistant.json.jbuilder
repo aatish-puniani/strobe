@@ -1,4 +1,4 @@
-json.avatar @assistant.avatar
+json.avatar @assistant.avatar.url(:thumb)
 json.occupation @assistant.occupation
 json.name @assistant.name
 json.city @assistant.city

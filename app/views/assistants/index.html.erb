@@ -1,5 +1,5 @@
  <div ng-app="app">
-    <div ng-controller="angularCtrl" ng-init"setup()">
+    <div ng-controller="angularCtrl" ng-init="setup()">
 
  <div class="search-row-wrapper"
          style="background-image: url('/assets/background.jpg'); background-size: cover; background-position: center center;">
@@ -295,6 +295,15 @@
                             <ul>
                                 <li ng-repeat="error in errors">{{ error }}</li>
                             </ul>
+
+                            <div class="row" ng-repeat="assistant in assistants">
+                                <div class="col-sm-1  col-xs-2 no-padding photobox">
+                                    <div class="add-image"><a href=""><img class="thumbnail no-margin"
+                                                                           alt="user" src="{{ assistant.avatar }}"></a></div>
+                                </div>
+                                <h4>{{ assistant.occupation.name }}</h4>
+                                
+                            </div>
 
                             <% @assistants.find_each do |assistant| %>
                                 <div class="col-sm-1  col-xs-2 no-padding photobox">
