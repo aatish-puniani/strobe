@@ -2952,8 +2952,8 @@ td.ads-details-td {
   }
 
   .hasOverly > div {
-    padding-bottom: 40px;
-    padding-top: 40px;
+    padding-bottom: 100px;
+    padding-top: 100px;
   }
 
   .intro.jobs-intro {
@@ -4001,7 +4001,7 @@ nav.slider-nav a.next {
 }
 
 .jobs-intro {
-  height: 450px;
+  height: 800px;
 }
 
 .hasOverly > div {

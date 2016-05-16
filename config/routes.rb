@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   patch '/assistants/avatarupdate' => 'assistants#avatar_update'
   patch '/assistants/:id' => 'assistants#update'
   delete '/assistants/:id' => 'assistants#destroy'
+  get '/assistants' => 'assistants#send_text_message'
 
   get '/photographers' => 'photographers#index'
   get '/photographers/:id' => 'photographers#show'

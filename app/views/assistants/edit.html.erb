@@ -21,12 +21,13 @@
                                     </div>
                                 </div>
                                 
-
+                              
                                 <div class="collapse-box">
-                                    <h5 class="collapse-title"> Terminate Account <a href="#TerminateAccount"
+                                    <h5 class="collapse-title"> Terminate Account <a href=""
                                                                                      data-toggle="collapse"
-                                                                                     class="pull-right"></a></h5>
-
+                                                                                         class="pull-right"></a></h5>
+                               
+                                <%= link_to "Destroy", "/assistants/#{@assistant.id}", method: :delete, data: { confirm: "You sure?" } %>       
                                     <div class="panel-collapse collapse in" id="TerminateAccount">
                                         <ul class="acc-list">
                                             <li><a href="account-close.html"><i class="icon-cancel-circled "></i> Close

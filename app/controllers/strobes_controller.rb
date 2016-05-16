@@ -10,8 +10,8 @@ class StrobesController < ApplicationController
   def send_text_message
     number_to_send_to = params[:number_to_send_to]
 
-    twilio_sid = "sid"
-    twilio_token = "token"
+    twilio_sid = ENV['TWILIO_API_ID']
+    twilio_token = ENV['TWILIO_API_TOKEN']
     twilio_phone_number = "3128185607"
 
     @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
