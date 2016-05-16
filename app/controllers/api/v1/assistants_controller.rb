@@ -50,8 +50,6 @@ class Api::V1::AssistantsController < ApplicationController
     @categories = Category.all
     if @assistant.update(
       name: params[:name] || @assistant.name,
-      # company: params[:company] || @assistant.company,
-      # email: params[:email] || @assistant.email,
       phone_number: params[:phone_number] || @assistant.phone_number,
       address: params[:address] || @assistant.address,
       day_rate: params[:day_rate] || @assistant.day_rate,
@@ -68,12 +66,11 @@ class Api::V1::AssistantsController < ApplicationController
       city_id: params[:city_id] || @assistant.city_id
     )
       flash[:success] = "Profile successfully updated!"
-      redirect_to "/assistants/#{@assistant.id}"
+      render 'show.json.jbuilder'
     else
       p @assistant.errors.full_messages
-      redirect_to action: :edit
+      render json: { errors: @assistant.errors.full_messages }
     end
-    render 'show.json.jbuilder'
   end
 
   def destroy

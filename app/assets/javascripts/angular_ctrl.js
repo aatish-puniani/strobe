@@ -34,6 +34,9 @@
       $http.patch('/api/v1/assistants.json', updateAssistant).then(function(response) {
         console.log(response);
         $scope.assistants.push(updateAssistant);
+      }, function(errorResponse) {
+        console.log(errorResponse);
+        $scope.errors = errorResponse.data.errors;
       });
     };
 
