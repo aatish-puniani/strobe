@@ -296,33 +296,35 @@
                                 <li ng-repeat="error in errors">{{ error }}</li>
                             </ul>
 
-                            <div class="row" ng-repeat="assistant in assistants">
+                            
+                                <!-- {{ assistant.name }}
+                                {{ assistant.occupation.name }}
+                                {{ assistant.city.name }}
+                                {{ assistant.years_exp }}
+                                {{ assistant.day_rate }}
+                                {{ assistant.bio }} -->
+
+                            </div>
+
+                            
+                                </div>
+                                <div class="row" ng-repeat="assistant in assistants">
                                 <div class="col-sm-1  col-xs-2 no-padding photobox">
                                     <div class="add-image"><a href=""><img class="thumbnail no-margin"
                                                                            alt="user" src="{{ assistant.avatar }}"></a></div>
                                 </div>
-                                <h4>{{ assistant.occupation.name }}</h4>
-                                
-                            </div>
-
-                            <% @assistants.find_each do |assistant| %>
-                                <div class="col-sm-1  col-xs-2 no-padding photobox">
-                                    <div class="add-image"><a href=""><img class="thumbnail no-margin"
-                                                                           alt="user" <%= image_tag (assistant.avatar.url(:thumb)) %></a></div>
-                                </div>
-                                <!--/.photobox-->
                                 <div class="col-sm-10  col-xs-10  add-desc-box">
                                     <div class="add-details jobs-item">
-                                    <h4 class="company-title"><%= assistant.occupation.name %></h4>
-                                        <h4 class="job-title"><%= assistant.name %></h4>
+                                    <h4 class="company-title">{{ assistant.occupation.name }}</h4>
+                                        <h4 class="job-title">{{ assistant.name }}</h4>
                                         
                                         <span class="info-row">  <span class="item-location"><i
-                                                class="fa fa-map-marker"></i> <%= assistant.city.name %> </span> <span class="date"><i
-                                                class=" icon-clock"> </i>Years Exp: <%= assistant.years_exp %></span><span class=" salary"> <i
-                                                class=" icon-money"> </i><%= assistant.day_rate %></span></span>
+                                                class="fa fa-map-marker"></i> {{ assistant.city.name }} </span> <span class="date"><i
+                                                class=" icon-clock"> </i>Years Exp: {{ assistant.years_exp }}</span><span class=" salary"> <i
+                                                class=" icon-money"> </i>{{ assistant.day_rate }}</span></span>
 
                                         <div class="jobs-desc">
-                                            <%= assistant.bio %>
+                                            {{ assistant.bio }}
                                         </div>
 
 
@@ -348,7 +350,7 @@
                                                 </li>
                                             </ul>
                                         </div>
-
+                                        </div>
 
                                     </div>
                                 </div>
@@ -357,7 +359,7 @@
                                 <!--/.add-desc-box-->
                             </div>
                             <!--/.job-item-->
-                            <% end %>
+                            
                             
 
 
