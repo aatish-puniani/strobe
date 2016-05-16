@@ -2,6 +2,13 @@
 (function()  {
   "use strict";
   angular.module("app").controller("angularCtrl", function($scope) {
-    $scope.message = "Hello";
+    
+    $scope.assistants = [
+    {
+      
+    }]
+    
+
+
   });
 })();
