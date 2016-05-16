@@ -7,16 +7,16 @@ Rails.application.routes.draw do
   get '/about' => 'strobes#about'
 
   
-      get '/assistants' => 'assistants#index'
-      get '/assistants/:id' => 'assistants#show'
-      get '/assistants/:id/edit' => 'assistants#edit'
-      patch '/assistants/avatarupdate' => 'assistants#avatar_update'
-      patch '/assistants/:id' => 'assistants#update'
-      delete '/assistants/:id' => 'assistants#destroy'
-      get '/assistants' => 'assistants#send_text_message'
+  get '/assistants' => 'assistants#index'
+  get '/assistants/:id' => 'assistants#show'
+  get '/assistants/:id/edit' => 'assistants#edit'
+  patch '/assistants/avatarupdate' => 'assistants#avatar_update'
+  patch '/assistants/:id' => 'assistants#update'
+  delete '/assistants/:id' => 'assistants#destroy'
+  get '/assistants' => 'assistants#send_text_message'
     
 
-namespace :api do
+  namespace :api do
     namespace :v1 do
       get '/assistants' => 'assistants#index'
       get '/assistants/:id' => 'assistants#show'

@@ -73,6 +73,7 @@ class Api::V1::AssistantsController < ApplicationController
       p @assistant.errors.full_messages
       redirect_to action: :edit
     end
+    render 'show.json.jbuilder'
   end
 
   def destroy
