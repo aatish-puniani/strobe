@@ -5,7 +5,9 @@
          style="background-image: url('/assets/background.jpg'); background-size: cover; background-position: center center;">
         <div class="container text-center">
             <div class="col-sm-3">
-                <input class="form-control keyword" type="text" placeholder="Assistant Name">
+            <input ng-model="nameFilter" placeholder="Assistant Name">
+            <div ng-repeat="assistant in assistants | filter: {name: nameFilter}">
+                </div>
             </div>
             <form action="/assistants" method="get">
             <div class="col-sm-3">
@@ -394,7 +396,7 @@
     </div>
     </div>
     </div>
-    
+
     <!-- /.main-container -->
 
    
