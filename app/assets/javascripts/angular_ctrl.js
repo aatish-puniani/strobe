@@ -15,8 +15,8 @@
         inputAssistantCar, inputAssistantOccupationId, inputAssistantBlog, inputAssistantFacebook, inputAssistantCityId, inputAssistantAvatar)
       var updateAssistant = {
         name: inputAssistantName,
-        phone_number: nputAssistantPhoneNumber,
-        address: nputAssistantAddress,
+        phone_number: inputAssistantPhoneNumber,
+        address: inputAssistantAddress,
         day_rate: inputAssistantDayRate,
         worked_with: inputAssistantWorkedWith,
         url: inputAssistantUrl,
