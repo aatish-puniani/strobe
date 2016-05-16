@@ -308,7 +308,7 @@
 
                             
                                 </div>
-                                <div class="row" ng-repeat="assistant in assistants">
+                                <div class="row" ng-repeat="assistant in assistants | filter: {name: nameFilter} | orderBy:orderAttribute:orderDescending">>
                                 <div class="col-sm-1  col-xs-2 no-padding photobox">
                                     <div class="add-image"><a href=""><img class="thumbnail no-margin"
                                                                            alt="user" src="{{ assistant.avatar }}"></a></div>
