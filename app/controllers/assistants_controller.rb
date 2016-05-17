@@ -69,6 +69,10 @@ class AssistantsController < ApplicationController
       params[:skill_ids].each do |skill_id|
         CategorizedSkill.create(skill_id: skill_id, assistant_id: assistant_id)
       end
+      CategorizedCategory.delete_all(assistant_id: assistant_id)
+      params[:category_ids].each do |category_id|
+        CategorizedCategory.create(category_id: category_id, assistant_id: assistant_id)
+      end
       flash[:success] = "Profile successfully updated!"
       redirect_to "/assistants/#{@assistant.id}"
     else

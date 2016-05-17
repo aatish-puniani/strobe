@@ -257,9 +257,13 @@
                                   <% end %>
                               </div>
 
+
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Genre</label>
-                                <%= check_box_tag "categories", options_from_collection_for_select(@categories, "id", "name") %>
+                                  <% @categories.each do |category| %>
+                                    <%= check_box_tag category.name, value = true, checked = CategorizedAssistant.exists?(category_id: category.id, assistant_id: current_assistant.id) %>
+                                    <%= label_tag category.name %>
+                                  <% end %>
                               </div>
 
                               <div class="form-group">
