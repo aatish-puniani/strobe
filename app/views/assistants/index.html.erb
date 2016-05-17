@@ -309,13 +309,13 @@
                                 </div>
                                 <div class="row" ng-repeat="assistant in assistants | filter: {name: nameFilter} | orderBy:orderAttribute:orderDescending">>
                                 <div class="col-sm-1  col-xs-2 no-padding photobox">
-                                    <div class="add-image"><a href=""><img class="thumbnail no-margin"
+                                    <div class="add-image"><a ng-href="/assistants/{{ assistant.id }}"><img class="thumbnail no-margin"
                                                                            alt="user" src="{{ assistant.avatar }}"></a></div>
                                 </div>
                                 <div class="col-sm-10  col-xs-10  add-desc-box">
                                     <div class="add-details jobs-item">
                                     <h4 class="company-title">{{ assistant.occupation.name }}</h4>
-                                        <h4 class="job-title">{{ assistant.name }}</h4>
+                                        <a ng-href="/assistants/{{ assistant.id }}"><h4 class="job-title">{{ assistant.name }}</h4></a>
                                         
                                         <span class="info-row">  <span class="item-location"><i
                                                 class="fa fa-map-marker"></i> {{ assistant.city.name }} </span> <span class="date"><i
