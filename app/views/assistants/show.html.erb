@@ -141,7 +141,7 @@
                                   <label class="col-sm-3 control-label">URL</label>
 
                                   <div class="col-sm-9">
-                                      <p><%= @assistant.url %></p>
+                                      <a><p><%= @assistant.url %></p></a>
                                   </div>
                                 
                                   
@@ -154,25 +154,25 @@
                                   <label class="col-sm-3 control-label">Facebook</label>
 
                                   <div class="col-sm-9">
-                                      <p><%= @assistant.facebook %></p>
+                                      <a><p>Facebook<% link_to @assistant.facebook %></p></a>
                                   </div>
                                   
                                   <label class="col-sm-3 control-label">Twitter</label>
 
                                   <div class="col-sm-9">
-                                      <p><%= @assistant.twitter %></p>
+                                      <a><p><%= @assistant.twitter %></p></a>
                                   </div>
                                   
                                   <label class="col-sm-3 control-label">Instagram</label>
 
                                   <div class="col-sm-9">
-                                      <p><%= @assistant.instagram %></p>
+                                      <a><p><%= @assistant.instagram %></p></a>
                                   </div>
                                   
                                   <label class="col-sm-3 control-label">Blog</label>
 
                                   <div class="col-sm-9">
-                                      <p><%= @assistant.blog %></p>
+                                      <a><p><%= @assistant.blog %></p></a>
                                   </div>
 
                                   <label class="col-sm-3 control-label">Years of Experience</label>

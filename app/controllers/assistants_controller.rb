@@ -1,18 +1,20 @@
 class AssistantsController < ApplicationController
   def index
-    @assistants = Assistant.all
     @occupations = Occupation.all
     @categories = Category.all
     @cities = City.all
     @skills = Skill.all
 
-    if params[:city]
-      @assistants = City.find_by(name: params[:city]).assistants
-    end
+    # @assistants = Assistant.all
+    # if params[:city]
+    #   @assistants = City.find_by(name: params[:city]).assistants
+    # end
 
-    if params[:occupation]
-      @assistants = Occupation.find_by(name: params[:occupation]).assistants
-    end
+    # if params[:occupation]
+    #   @assistants = Occupation.find_by(name: params[:occupation]).assistants
+    # end
+    @params_city = params[:city]
+    @params_occupation = params[:occupation]
   end
 
   def show

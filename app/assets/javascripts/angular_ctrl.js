@@ -3,10 +3,15 @@
   "use strict";
   angular.module("app").controller("angularCtrl", function($scope, $http) {
 
-    $scope.setup = function() {
+    $scope.setup = function(city, occupation) {
+      console.log(city, occupation);
       $http.get('/api/v1/assistants.json').then(function(response) {
         console.log(response.data);
-        $scope.assistants = response.data;
+        $scope.assistants = response.data.filter(function(assistant) {
+          var cityMatch = city ? assistant.city.name.toLowerCase() === city.toLowerCase() : true;
+          var occupationMatch = occupation ? assistant.occupation.name.toLowerCase() === occupation.toLowerCase() : true;
+          return cityMatch && occupationMatch;
+        });
       });
     };
 

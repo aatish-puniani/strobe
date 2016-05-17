@@ -1,13 +1,12 @@
  <div ng-app="app">
-    <div ng-controller="angularCtrl" ng-init="setup()">
+    <div ng-controller="angularCtrl" ng-init="setup('<%= @params_city %>', '<%= @params_occupation %>')">
 
  <div class="search-row-wrapper"
          style="background-image: url('/assets/index.jpg'); background-size: cover; background-position: center center;">
         <div class="container text-center">
             <div class="col-sm-3">
             <input ng-model="nameFilter" placeholder="Assistant Name">
-            <div ng-repeat="assistant in assistants | filter: {name: nameFilter}">
-                </div>
+
             </div>
             <form action="/assistants" method="get">
             <div class="col-sm-3">
