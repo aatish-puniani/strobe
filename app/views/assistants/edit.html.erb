@@ -252,7 +252,7 @@
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Skills</label>
                                   <% @skills.each do |skill| %>
-                                    <%= check_box_tag "skill_ids[]", skill.id, 0 %>
+                                    <%= check_box_tag skill.name, value = true, checked = CategorizedSkill.exists?(skill_id: skill.id, assistant_id: current_assistant.id) %>
                                     <%= label_tag skill.name %>
                                   <% end %>
                               </div>
