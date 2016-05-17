@@ -1,5 +1,5 @@
 class CategorizedSkill < ActiveRecord::Base
-  has_many :assistants
-  has_many :jobs
-  has_many :skills
+  belongs_to :assistant
+  belongs_to :job
+  belongs_to :skill
 end

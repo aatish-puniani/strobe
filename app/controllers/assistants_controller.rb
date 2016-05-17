@@ -49,8 +49,6 @@ class AssistantsController < ApplicationController
     @categories = Category.all
     if @assistant.update(
       name: params[:name] || @assistant.name,
-      # company: params[:company] || @assistant.company,
-      # email: params[:email] || @assistant.email,
       phone_number: params[:phone_number] || @assistant.phone_number,
       address: params[:address] || @assistant.address,
       day_rate: params[:day_rate] || @assistant.day_rate,
@@ -67,10 +65,10 @@ class AssistantsController < ApplicationController
       city_id: params[:city_id] || @assistant.city_id
     )
 
-    CategorizedSkill.delete_all(assistant_id: assistant_id)
-    params[:skill_ids].each do |skill_id|
-      CategorizedSkill.create(skill_id: skill_id, assistant_id: assistant_id)
-    end
+      CategorizedSkill.delete_all(assistant_id: assistant_id)
+      params[:skill_ids].each do |skill_id|
+        CategorizedSkill.create(skill_id: skill_id, assistant_id: assistant_id)
+      end
       flash[:success] = "Profile successfully updated!"
       redirect_to "/assistants/#{@assistant.id}"
     else
