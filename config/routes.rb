@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get '/sign_up' => 'strobes#sign_up'
   get '/login' => 'strobes#login'
   get '/about' => 'strobes#about'
-
+  get '/privacy' => 'strobes#privacy'
+  get '/contact' => 'strobes#contact'
+  get '/faq' => 'strobes#faq'
   
   get '/assistants' => 'assistants#index'
   get '/assistants/:id' => 'assistants#show'
