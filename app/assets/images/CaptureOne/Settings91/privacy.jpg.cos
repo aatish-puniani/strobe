@@ -1,44 +1,41 @@
 <?xml version="1.0"?>
 <IMG>
 	<E K="Author" V="" />
-	<E K="Camera_Firmware" V="Firmware Version 1.0.1" />
-	<E K="Camera_Lens" V="TS-E90mm f/2.8" />
-	<E K="Camera_Make" V="Canon" />
-	<E K="Camera_Model" V="Canon EOS 5DS R" />
-	<E K="Camera_Serial" V="022021000296" />
-	<E K="Camera_Software" V="Capture One 9 Macintosh" />
+	<E K="Camera_Firmware" V="IQ180, Factory Firmware: 6.01.8" />
+	<E K="Camera_Lens" V="120.0 mm f/32.0" />
+	<E K="Camera_Make" V="Phase One" />
+	<E K="Camera_Model" V="IQ180" />
+	<E K="Camera_Serial" V="FP001030" />
+	<E K="Camera_Software" V="Adobe Photoshop CC 2014 (Macintosh)" />
 	<E K="CameraDisplayName" V="Jpeg File" />
-	<E K="Exp_Aperture" V="16.000000" />
+	<E K="Exp_Aperture" V="4.000000" />
 	<E K="Exp_ColorSpace" V="Adobe RGB (1998)" />
-	<E K="Exp_Date" V="1436563971.000000" />
+	<E K="Exp_Date" V="1459191317.000000" />
 	<E K="Exp_ExposureCompensation" V="0" />
 	<E K="Exp_ExposureMode" V="1" />
 	<E K="Exp_ExposureProg" V="1" />
-	<E K="Exp_FlashCompensation" V="0" />
-	<E K="Exp_FlashMode" V="16" />
-	<E K="Exp_FocalLength" V="90.000000" />
+	<E K="Exp_FlashCompensation" V="--" />
+	<E K="Exp_FocalLength" V="120.000000" />
 	<E K="Exp_Format" V="JPEG" />
-	<E K="Exp_MeteringMode" V="5" />
-	<E K="Exp_ShutterSpeed" V="13.000000" />
-	<E K="Exp_WhiteBalance" V="0" />
-	<E K="File_Size" V="754194" />
-	<E K="Height" V="1155" />
+	<E K="Exp_ShutterSpeed" V="0.008000" />
+	<E K="File_Size" V="317007" />
+	<E K="Height" V="1037" />
 	<E K="ImageClassification" V="19" />
-	<E K="ISO" V="400" />
+	<E K="ISO" V="100" />
 	<E K="MultiShotCount" V="0" />
 	<E K="MultiShotSequenceID" V="--" />
 	<E K="MultiShotTotal" V="0" />
 	<E K="MultiShotType" V="4294967295" />
 	<E K="PixelHeight" V="0.000000" />
 	<E K="PixelWidth" V="0.000000" />
-	<E K="UUID" V="2763E8CF-481C-4EEE-BCE1-6B68797E7551" />
+	<E K="UUID" V="74F7C571-A3BF-40DE-A003-9550526F6B5D" />
 	<E K="Version" V="900" />
 	<E K="Width" V="1723" />
 	<VAR Engine="900">
-		<E K="LastMetadataModificationDate" V="1463513450.054389" />
+		<E K="LastMetadataModificationDate" V="1463511652.257571" />
 		<E K="ProductID" V="FileSystemJpeg" />
-		<E K="SyncProcessCounter" V="2" />
-		<E K="UUID" V="51C312E6-EE29-4E5D-8906-953EFC981567" />
+		<E K="SyncProcessCounter" V="1" />
+		<E K="UUID" V="618FCB11-E9BC-453F-A64D-F0AD33FB6483" />
 		<DL>
 			<E K="Brightness" V="0.000000" />
 			<E K="BwBlue" V="0.000000" />
@@ -88,10 +85,10 @@
 			<E K="Highlight" V="1.000000;1.000000;1.000000;1.000000" />
 			<E K="HighlightRecovery" V="0.000000" />
 			<E K="ICCProfile" V="FileSystemJpeg-neutral.icm" />
-			<E K="Image_DateCreated" V="20150710" />
-			<E K="LensAperture" V="16.000000" />
+			<E K="Image_DateCreated" V="20160328" />
+			<E K="LensAperture" V="4.000000" />
 			<E K="LensChromaFringing" V="|||||" />
-			<E K="LensFocalLength" V="90.000000" />
+			<E K="LensFocalLength" V="120.000000" />
 			<E K="LensLCCDustRemovalEnabled" V="0" />
 			<E K="LensLccLightFalloff" V="0" />
 			<E K="LensLccLightFalloffAmount" V="0.000000" />
