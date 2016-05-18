@@ -27,6 +27,8 @@ Rails.application.routes.draw do
       patch '/assistants/:id' => 'assistants#update'
       delete '/assistants/:id' => 'assistants#destroy'
       get '/assistants' => 'assistants#send_text_message'
+
+      get '/occupations' => 'occupations#index'
     end
 
     get '/photographers' => 'photographers#index'

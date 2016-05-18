@@ -43,35 +43,10 @@
                             <div class="list-filter">
                                 <h5 class="list-title"><strong><a href="#">Assistant Type</a></strong></h5>
 
-                                <div class="filter-content filter-employment-type">
-                                    <ul class="browse-list list-unstyled">
-                                        <li>
-                                            <input type="checkbox" id="employment_all" value="all" class="emp"
-                                                   checked="checked">
-                                            <label for="employment_all">All</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtft" value="jtft"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtft">First Assistant</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtpt" value="jtpt"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtpt">Second Assistant</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtct" value="jtct"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtct">Third Assistant</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">Digital Tech</label>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <li ng-repeat="occupation in occupations">
+                                <label>{{ occupation.name }}</label>
+                                <input type="checkbox" ng-model="occupationFilter" ng-click="selectedProfessions">
+                                </li>
                                 <!-- clear all checkbox -->
                              <!-- <div style="clear:both"></div> -->
 
@@ -307,7 +282,7 @@
 
                             
                                 </div>
-                                <div class="row" ng-repeat="assistant in assistants | filter: {name: nameFilter} | orderBy:orderAttribute:orderDescending">>
+                                <div class="row" ng-show="occupationFilter(assistant)" ng-repeat="assistant in assistants | filter: {name: nameFilter} | orderBy:orderAttribute:orderDescending">>
                                 <div class="col-sm-1  col-xs-2 no-padding photobox">
                                     <div class="add-image"><a ng-href="/assistants/{{ assistant.id }}"><img class="thumbnail no-margin"
                                                                            alt="user" src="{{ assistant.avatar }}"></a></div>

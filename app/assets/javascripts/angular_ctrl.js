@@ -45,6 +45,10 @@
       });
     };
 
+    $http.get('/api/v1/occupations.json').then(function(response) {
+      $scope.occupations = response.data;
+    });
+
     $scope.changeOrderAttribute = function(inputAttribute) {
       if (inputAttribute !== $scope.orderAttribute) {
         $scope.orderDescending = false;
@@ -53,6 +57,19 @@
       }
       $scope.orderAttribute = inputAttribute;
     };
+
+    $scope.selectedProfessions = ["Digital Tech", "First Assistant"];
+
+    $scope.occupationFilter = function(assistant) {
+      console.log(assistant);
+      if ($scope.selectedProfessions.indexOf(assistant.occupation.name) !== -1 ) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+
+
 
     window.$scope = $scope;
   });
