@@ -45,7 +45,7 @@
 
                                 <li ng-repeat="occupation in occupations">
                                 <label>{{ occupation.name }}</label>
-                                <input type="checkbox" ng-model="occupationFilter" ng-click="selectedProfessions">
+                                <input type="checkbox" ng-model="occupationFilter" ng-click="toggleProfession(occupation)">
                                 </li>
                                 <!-- clear all checkbox -->
                              <!-- <div style="clear:both"></div> -->

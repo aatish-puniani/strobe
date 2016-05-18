@@ -16,8 +16,8 @@
     };
 
     $scope.updateAssistant = function(inputAssistantName, inputAssistantPhoneNumber, inputAssistantAddress, inputAssistantDayRate,inputAssistantWorkedWith,
-        inputAssistantUrl, inputAssistantBio, inputAssistantTwitter, inputAssistantInstagram, inputAssistantYearsExp,
-        inputAssistantCar, inputAssistantOccupationId, inputAssistantBlog, inputAssistantFacebook, inputAssistantCityId, inputAssistantAvatar) {
+      inputAssistantUrl, inputAssistantBio, inputAssistantTwitter, inputAssistantInstagram, inputAssistantYearsExp,
+      inputAssistantCar, inputAssistantOccupationId, inputAssistantBlog, inputAssistantFacebook, inputAssistantCityId, inputAssistantAvatar) {
       var updateAssistant = {
         name: inputAssistantName,
         phone_number: inputAssistantPhoneNumber,
@@ -58,15 +58,25 @@
       $scope.orderAttribute = inputAttribute;
     };
 
-    $scope.selectedProfessions = ["Digital Tech", "First Assistant"];
+    $scope.selectedProfessions = [];
 
     $scope.occupationFilter = function(assistant) {
-      console.log(assistant);
       if ($scope.selectedProfessions.indexOf(assistant.occupation.name) !== -1 ) {
         return true;
       } else {
         return false;
       }
+
+    };
+
+    $scope.toggleProfession = function(occupation) {
+      console.log(occupation.name);
+      if ($scope.selectedProfessions.indexOf(occupation.name) === -1) {
+        $scope.selectedProfessions.push(occupation.name);
+      } else {
+        $scope.selectedProfessions.splice(occupation.name);
+      }
+
     };
 
 
