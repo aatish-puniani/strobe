@@ -10,11 +10,11 @@
 
                                     <div class="panel-collapse collapse in">
                                         <ul class="acc-list">
-                                            <li><a class="active" href="/assistants/#{@assistant.id}"><i class="icon-home"></i>
-                                                View Profile </a></li>
-                                            <li><a class="active" href="/assistants/#{@assistant.id}/edit"><i class="icon-home"></i>
+                                            <li><%= link_to "Show", "/assistants/#{current_assistant.id}", method: :get %><i class="icon-home"></i>
+                                                View Profile</li>
+                                            <li><a class="active" href="/assistants/#{current_assistant.id}/edit"><i class="icon-home"></i>
                                                 Edit Profile </a></li>
-                                            <li><a class="active" href="/assistants/#{@assistant.id}"><i class="icon-home"></i>
+                                            <li><a class="active" href="/assistants/#{current_assistant.id}"><i class="icon-home"></i>
                                                 View Jobs </a></li>
 
                                         </ul>
@@ -27,7 +27,7 @@
                                                                                      data-toggle="collapse"
                                                                                          class="pull-right"></a></h5>
                                
-                                <%= link_to "Destroy", "/assistants/#{@assistant.id}", method: :delete, data: { confirm: "You sure?" } %>       
+                                <%= link_to "Destroy", "/assistants/#{current_assistant.id}", method: :delete, data: { confirm: "You sure?" } %>       
                                     <div class="panel-collapse collapse in" id="TerminateAccount">
                                         <ul class="acc-list">
                                             <li><a href="account-close.html"><i class="icon-cancel-circled "></i> Close
@@ -49,10 +49,10 @@
                         <div class="row">
                             <div class="col-md-5 col-xs-4 col-xxs-12">
                                 <button type="button" class="btn" data-toggle="modal" data-target=".bs-example-modal-sm">
-                                <%= image_tag (@assistant.avatar.url(:thumb)) %>
+                                <%= image_tag (current_assistant.avatar.url(:thumb)) %>
                               </button>
                                 
-                                <h3 class="no-padding text-center-480 useradmin"><%= @assistant.name ? @assistant.name : nil %></h3>
+                                <h3 class="no-padding text-center-480 useradmin"><%= current_assistant.name ? current_assistant.name : nil %></h3>
                                 
                             </div>
                             <div class="col-md-7 col-xs-8 col-xxs-12">
@@ -91,24 +91,24 @@
 
                     <div class="inner-box">
                         <div class="welcome-msg">
-                            <h3 class="page-sub-header2 clearfix no-padding">Hello <%= @assistant.name %> </h3>
+                            <h3 class="page-sub-header2 clearfix no-padding">Hello <%= current_assistant.name %> </h3>
                         </div>
 
                         <!--/.row-box End-->
                         <div class="row">
-                          <%= form_tag "/assistants/#{@assistant.id}", method: :patch do %>
+                          <%= form_tag "/assistants/#{current_assistant.id}", method: :patch do %>
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Name</label>
 
                                   <div class="col-sm-9">
-                                      <input name="name" type="string" class="form-control" value="<%= @assistant.name %>">
+                                      <input name="name" type="string" class="form-control" value="<%= current_assistant.name %>">
                                   </div>
                               </div>
                               <!-- <div class="form-group">
                                   <label class="col-sm-3 control-label">Company</label>
 
                                   <div class="col-sm-9">
-                                      <input name="company" type="string" class="form-control" value="<%= @assistant.company %>">
+                                      <input name="company" type="string" class="form-control" value="<%= current_assistant.company %>">
                                   </div>
                               </div> -->
 
@@ -117,7 +117,7 @@
 
                                   <div class="col-sm-9">
                                       <input name="email" type="string" class="form-control"
-                                             value="<%= @assistant.email %>">
+                                             value="<%= current_assistant.email %>">
                                   </div>
                               </div> -->
 
@@ -125,14 +125,14 @@
                                   <label class="col-sm-3 control-label">Phone Number</label>
 
                                   <div class="col-sm-9">
-                                      <input name="phone_number" type="string" class="form-control" value="<%= @assistant.phone_number %>">
+                                      <input name="phone_number" type="string" class="form-control" value="<%= current_assistant.phone_number %>">
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Address</label>
 
                                   <div class="col-sm-9">
-                                      <input name="address" type="string" class="form-control" value="<%= @assistant.address %>">
+                                      <input name="address" type="string" class="form-control" value="<%= current_assistant.address %>">
                                   </div>
                               </div>
                               <div class="form-group">
@@ -140,7 +140,7 @@
 
                                   <div class="col-sm-9">
                                       <input name="day_rate" type="integer" class="form-control"
-                                             value="<%= @assistant.day_rate %>">
+                                             value="<%= current_assistant.day_rate %>">
                                   </div>
                               </div>
                               <div class="form-group">
@@ -148,14 +148,14 @@
 
                                   <div class="col-sm-9">
                                       <input name="worked_with" type="text" class="form-control"
-                                             value="<%= @assistant.worked_with %>">
+                                             value="<%= current_assistant.worked_with %>">
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">URL</label>
 
                                   <div class="col-sm-9">
-                                      <input name="url" type="string" class="form-control" value="<%= @assistant.url %>">
+                                      <input name="url" type="string" class="form-control" value="<%= current_assistant.url %>">
                                   </div>
                               </div>
 
@@ -171,35 +171,35 @@
                                   <label class="col-sm-3 control-label">Bio</label>
 
                                   <div class="col-sm-9">
-                                      <input name="bio" type="text" class="form-control" value="<%= @assistant.bio %>">
+                                      <input name="bio" type="text" class="form-control" value="<%= current_assistant.bio %>">
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Facebook</label>
 
                                   <div class="col-sm-9">
-                                      <input name="facebook" type="string" class="form-control" value="<%= @assistant.facebook %>">
+                                      <input name="facebook" type="string" class="form-control" value="<%= current_assistant.facebook %>">
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Twitter</label>
 
                                   <div class="col-sm-9">
-                                      <input name="twitter" type="string" class="form-control" value="<%= @assistant.twitter %>">
+                                      <input name="twitter" type="string" class="form-control" value="<%= current_assistant.twitter %>">
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Instagram</label>
 
                                   <div class="col-sm-9">
-                                      <input name="instagram" type="string" class="form-control" value="<%= @assistant.instagram %>">
+                                      <input name="instagram" type="string" class="form-control" value="<%= current_assistant.instagram %>">
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Blog</label>
 
                                   <div class="col-sm-9">
-                                      <input name="blog" type="string" class="form-control" value="<%= @assistant.blog %>">
+                                      <input name="blog" type="string" class="form-control" value="<%= current_assistant.blog %>">
                                   </div>
                               </div>
 
@@ -207,7 +207,7 @@
                                   <label class="col-sm-3 control-label">Years of Experience</label>
 
                                   <div class="col-sm-9">
-                                      <input name="years_exp" type="integer" class="form-control" value="<%= @assistant.years_exp %>">
+                                      <input name="years_exp" type="integer" class="form-control" value="<%= current_assistant.years_exp %>">
                                   </div>
                               </div>
 
@@ -245,7 +245,7 @@
                                   <label class="col-sm-3 control-label">Car</label>
 
                                   <div class="col-sm-9">
-                                      <input name="car" type="boolean" class="form-control" value="<%= @assistant.car %>">
+                                      <input name="car" type="boolean" class="form-control" value="<%= current_assistant.car %>">
                                   </div>
                               </div>
 
