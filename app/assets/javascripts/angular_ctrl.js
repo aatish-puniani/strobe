@@ -58,7 +58,7 @@
       $scope.orderAttribute = inputAttribute;
     };
 
-    $scope.selectedProfessions = [];
+    $scope.selectedProfessions = ["Digital Tech", "First Assistant", "Second Assistant", "Third Assistant"];
 
     $scope.occupationFilter = function(assistant) {
       if ($scope.selectedProfessions.indexOf(assistant.occupation.name) !== -1 ) {
@@ -70,13 +70,17 @@
     };
 
     $scope.toggleProfession = function(occupation) {
-      console.log(occupation.name);
+      if($scope.selectedProfessions.length === 4) {
+        $scope.selectedProfessions = [];
+      }
       if ($scope.selectedProfessions.indexOf(occupation.name) === -1) {
         $scope.selectedProfessions.push(occupation.name);
       } else {
-        $scope.selectedProfessions.splice(occupation.name);
+        $scope.selectedProfessions.splice($scope.selectedProfessions.indexOf(occupation.name), 1);
       }
-
+      if($scope.selectedProfessions.length === 0){
+        $scope.selectedProfessions = ["Digital Tech", "First Assistant", "Second Assistant", "Third Assistant"];
+      }
     };
 
 
