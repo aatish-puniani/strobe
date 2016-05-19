@@ -8,33 +8,21 @@
                                 <div class="collapse-box">
                                     
 
-
+                                <% if current_assistant %>
                                     <div class="panel-collapse collapse in">
                                         <ul class="acc-list">
-                                            <li><a class="active" href="/assistants/#{@assistant.id}"><i class="icon-home"></i>
-                                                View Profile </a></li>
-                                            <li><a class="active" href="/assistants/#{@assistant.id}">
-                                                Edit Profile </a></li>
-                                            <li><a class="active" href="/jobs">
-                                                View Jobs </a></li>
+                                            <li><%= link_to "View Profile", "/assistants/#{current_assistant.id}", method: :get %></li>
+                                            <li><%= link_to "Edit Profile", "/assistants/#{current_assistant.id}/edit", method: :get %></li>
+                                            <% else %>
+                                            <li><%= link_to "Not a member?", "/assistants/sign_up", method: :get %></li>
+                                            <% end %>
                                             
                                         </ul>
                                     </div>
                                 </div>
                                 
 
-                                <div class="collapse-box">
-                                    <h5 class="collapse-title"> Terminate Account <a href="#TerminateAccount"
-                                                                                     data-toggle="collapse"
-                                                                                     class="pull-right"></a></h5>
-
-                                    <div class="panel-collapse collapse in" id="TerminateAccount">
-                                        <ul class="acc-list">
-                                            <li><a href="account-close.html"><i class="icon-cancel-circled "></i> Close
-                                                account </a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                
                                 <!-- /.collapse-box  -->
                             </div>
                         </div>
@@ -58,17 +46,7 @@
                                 <div class="header-data text-center-xs">
 
                                     <!-- Traffic data -->
-                                    <div class="hdata">
-                                        <div class="mcol-left">
-                                            <!-- Icon with red background -->
-                                            <i class="fa fa-eye ln-shadow"></i></div>
-                                        <div class="mcol-right">
-                                            <!-- Number of visitors -->
-                                            <p><a href="#">View Jobs</a></p>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-
+                                    
                                     <!-- revenue data -->
                                     
 
@@ -90,7 +68,12 @@
 
                     <div class="inner-box">
                         <div class="welcome-msg">
-                            <h3 class="page-sub-header2 clearfix no-padding">Hello <%= @assistant.name %> </h3>
+                            
+
+                        <% if current_assistant && current_assistant.id == @assistant.id %>
+                            <h3 class="page-sub-header2 clearfix no-padding">Hello <%= current_assistant.name %> </h3>
+                            <% else %>
+                            <% end %>
                         </div>
 
                         <!--/.row-box End-->

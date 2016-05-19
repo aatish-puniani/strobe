@@ -13,10 +13,8 @@
                                     <div class="panel-collapse collapse in">
                                         <ul class="acc-list">
                                             <li><%= link_to "View Profile", "/assistants/#{current_assistant.id}", method: :get %></li>
-                                            <li><a class="active" href="/assistants/#{current_assistant.id}/edit"><i class="icon-home"></i>
-                                                Edit Profile </a></li>
-                                            <li><a class="active" href="/assistants/#{current_assistant.id}"><i class="icon-home"></i>
-                                                View Jobs </a></li>
+                                            <li><%= link_to "Edit Profile", "/assistants/#{current_assistant.id}/edit", method: :get %></li>
+                                            
 
                                         </ul>
                                     </div>
@@ -60,16 +58,7 @@
                                 <div class="header-data text-center-xs">
 
                                     <!-- Traffic data -->
-                                    <div class="hdata">
-                                        <div class="mcol-left">
-                                            <!-- Icon with red background -->
-                                            <i class="fa fa-eye ln-shadow"></i></div>
-                                        <div class="mcol-right">
-                                            <!-- Number of visitors -->
-                                            <p><a href="#">View Jobs</a></p>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
+                                    
 
                                     <!-- revenue data -->
                                     
