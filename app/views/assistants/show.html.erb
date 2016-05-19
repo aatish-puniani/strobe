@@ -11,8 +11,8 @@
                                 <% if current_assistant %>
                                     <div class="panel-collapse collapse in">
                                         <ul class="acc-list">
-                                            <li><%= link_to "View Profile", "/assistants/#{current_assistant.id}", method: :get %></li>
-                                            <li><%= link_to "Edit Profile", "/assistants/#{current_assistant.id}/edit", method: :get %></li>
+                                            <li><%= link_to "View My Profile", "/assistants/#{current_assistant.id}", method: :get %></li>
+                                            <li><%= link_to "Edit My Profile", "/assistants/#{current_assistant.id}/edit", method: :get %></li>
                                             <% else %>
                                             <li><%= link_to "Not a member?", "/assistants/sign_up", method: :get %></li>
                                             <% end %>
@@ -124,7 +124,7 @@
                                   <label class="col-sm-3 control-label">URL</label>
 
                                   <div class="col-sm-9">
-                                      <a><p><%= @assistant.url %></p></a>
+                                      <a href="<%= @assistant.url %>"><p><%= @assistant.name %>'s Website</a>
                                   </div>
                                 
                                   
@@ -134,29 +134,41 @@
                                       <p><%= @assistant.bio %></p>
                                   </div>
                                   
+                                  <% if @assistant.facebook == nil %>
+                                  <% else %>
                                   <label class="col-sm-3 control-label">Facebook</label>
 
                                   <div class="col-sm-9">
-                                      <a href="#@assistant.facebook"><p>Facebook</a>
+                                      <a href="<%= @assistant.facebook %>"><p><%= @assistant.name %>'s Facebook</a>
                                   </div>
+                                  <% end %>
                                   
+                                  <% if @assistant.twitter == nil %>
+                                  <% else %>
                                   <label class="col-sm-3 control-label">Twitter</label>
 
                                   <div class="col-sm-9">
-                                      <a><p><%= @assistant.twitter %></p></a>
+                                      <a href="<%= @assistant.twitter %>"><p><%= @assistant.name %>'s Twitter</p></a>
                                   </div>
+                                  <% end %>
                                   
+                                  <% if @assistant.instagram == nil %>
+                                  <% else %>
                                   <label class="col-sm-3 control-label">Instagram</label>
 
                                   <div class="col-sm-9">
-                                      <a><p><%= @assistant.instagram %></p></a>
+                                      <a href="<%= @assistant.instagram %>"><p><%= @assistant.name %>'s Instagram</p></a>
                                   </div>
+                                  <% end %>
                                   
+                                  <% if @assistant.blog == nil %>
+                                  <% else %>
                                   <label class="col-sm-3 control-label">Blog</label>
 
                                   <div class="col-sm-9">
-                                      <a><p><%= @assistant.blog %></p></a>
+                                      <a href="<%= @assistant.blog %>"><p><%= @assistant.name %>'s Blog </p></a>
                                   </div>
+                                  <% end %>
 
                                   <label class="col-sm-3 control-label">Years of Experience</label>
 
