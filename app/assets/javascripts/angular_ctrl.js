@@ -3,8 +3,8 @@
   "use strict";
   angular.module("app").controller("angularCtrl", function($scope, $http) {
 
-    $scope.setup = function(city, occupation, skill) {
-      console.log(city, occupation, skill);
+    $scope.setup = function(city, occupation) {
+      console.log(city, occupation);
       $http.get('/api/v1/assistants.json').then(function(response) {
         console.log(response.data);
         $scope.assistants = response.data.filter(function(assistant) {
