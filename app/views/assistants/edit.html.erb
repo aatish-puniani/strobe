@@ -1,3 +1,5 @@
+
+
 <div class="main-container">
         <div class="container">
             <div class="row">
@@ -252,7 +254,7 @@
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Skills</label>
                                   <% @skills.each do |skill| %>
-                                    <%= check_box_tag skill.name, value = true, checked = CategorizedSkill.exists?(skill_id: skill.id, assistant_id: current_assistant.id) %>
+                                    <%= check_box_tag "skill_ids[]", skill.id, checked = CategorizedSkill.exists?(skill_id: skill.id, assistant_id: current_assistant.id) %>
                                     <%= label_tag skill.name %>
                                   <% end %>
                               </div>
@@ -261,7 +263,7 @@
                               <div class="form-group">
                                   <label class="col-sm-3 control-label">Genre</label>
                                   <% @categories.each do |category| %>
-                                    <%= check_box_tag category.name, value = true, checked = CategorizedAssistant.exists?(category_id: category.id, assistant_id: current_assistant.id) %>
+                                    <%= check_box_tag "category_ids[]", category.id, checked = CategorizedAssistant.exists?(category_id: category.id, assistant_id: current_assistant.id) %>
                                     <%= label_tag category.name %>
                                   <% end %>
                               </div>

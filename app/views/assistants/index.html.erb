@@ -1,5 +1,5 @@
  <div ng-app="app">
-    <div ng-controller="angularCtrl" ng-init="setup('<%= @params_city %>', '<%= @params_occupation %>')">
+    <div ng-controller="angularCtrl" ng-init="setup('<%= @params_city %>', '<%= @params_occupation %>', '<%= @params_skill %>')">
 
  <div class="search-row-wrapper"
          style="background-image: url('/assets/index.jpg'); background-size: cover; background-position: center center;">
@@ -56,118 +56,17 @@
                             <div class="list-filter">
                                 <h5 class="list-title"><strong><a href="#">Skills</a></strong></h5>
 
-                                <div class="filter-content filter-employment-type">
-                                    <ul class="browse-list list-unstyled">
-                                        <li>
-                                            <input type="checkbox" id="employment_all" value="all" class="emp"
-                                                   checked="checked">
-                                            <label for="employment_all">All</label>
-                                        </li>
+                                <li ng-repeat="skill in skills">
+                                <label>{{ skill.name }}</label>
+                                <input type="checkbox" ng-model="skillFilter" ng-click="toggleGear(skill)">
+                                </li>
+                                
                                         <h5>LIGHTING:</h5>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtft" value="jtft"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtft">Broncolor</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtpt" value="jtpt"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtpt">Profoto</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtct" value="jtct"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtct">Speedotron</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">Dynalite</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">Elinchrom</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">Arri</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">Kino Flo</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">K 5600</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">Briese</label>
-                                        </li>
+                                        
                                         <h5>CAMERAS:</h5>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">Canon</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">Nikon</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">Sony</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">Phase One</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">Hasselblad</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">Sinar</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">Cambo</label>
-                                        </li>
+                                        
                                         <h5>SOFTWARE:</h5>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">Photoshop</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">Lightroom</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">Capture One</label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="employment_jtin" value="jtin"
-                                                   class="emp emp-type">
-                                            <label for="employment_jtin">Phocus</label>
-                                        </li>
-
-                                    </ul>
+                                       
                                 </div>
                                 <!-- clear all checkbox -->
                              <!-- <div style="clear:both"></div> -->
@@ -248,7 +147,7 @@
                         </div>
                         <!--/.tab-box-->
 
-                        <div class="listing-filter hidden-xs">
+                        <!-- <div class="listing-filter hidden-xs">
                             <div class="pull-left col-sm-6 col-xs-12">
                                 <div class="breadcrumb-list text-center-xs">
                                     <a class="jobs-s-tag" rel="nofollow" title="Software Architect">Software
@@ -259,7 +158,7 @@
                                 <a class="clear-all-button text-muted">Clear all</a>
                             </div>
                             <div style="clear:both"></div>
-                        </div>
+                        </div> -->
                         <!--/.listing-filter-->
                         <div class="adds-wrapper jobs-list">
                             <div class="item-list job-item">

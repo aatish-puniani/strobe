@@ -3,8 +3,8 @@
   "use strict";
   angular.module("app").controller("angularCtrl", function($scope, $http) {
 
-    $scope.setup = function(city, occupation) {
-      console.log(city, occupation);
+    $scope.setup = function(city, occupation, skill) {
+      console.log(city, occupation, skill);
       $http.get('/api/v1/assistants.json').then(function(response) {
         console.log(response.data);
         $scope.assistants = response.data.filter(function(assistant) {
@@ -49,6 +49,10 @@
       $scope.occupations = response.data;
     });
 
+    $http.get('/api/v1/skills.json').then(function(response) {
+      $scope.skills = response.data;
+    });
+
     $scope.changeOrderAttribute = function(inputAttribute) {
       if (inputAttribute !== $scope.orderAttribute) {
         $scope.orderDescending = false;
@@ -70,7 +74,7 @@
     };
 
     $scope.toggleProfession = function(occupation) {
-      if($scope.selectedProfessions.length === 4) {
+      if ($scope.selectedProfessions.length === 4) {
         $scope.selectedProfessions = [];
       }
       if ($scope.selectedProfessions.indexOf(occupation.name) === -1) {
@@ -78,8 +82,33 @@
       } else {
         $scope.selectedProfessions.splice($scope.selectedProfessions.indexOf(occupation.name), 1);
       }
-      if($scope.selectedProfessions.length === 0){
+      if ($scope.selectedProfessions.length === 0) {
         $scope.selectedProfessions = ["Digital Tech", "First Assistant", "Second Assistant", "Third Assistant"];
+      }
+    };
+
+    $scope.selectedGears = ["Phocus", "Capture One", "Lightroom", "Photoshop", "Cambo", "Sinar", "Hasselblad", "Phase One", "Sony", "Nikon", "Canon", "Briese", "K 5600", "Kino Flo", "Arri", "Elinchrom", "Dynalite", "Speedotron", "Profoto", "Broncolor"];
+
+    $scope.skillFilter = function(assistant) {
+      if ($scope.selectedProfessions.indexOf(assistant.skill.name) !== -1 ) {
+        return true;
+      } else {
+        return false;
+      }
+
+    };
+
+    $scope.toggleGear = function(skill) {
+      if ($scope.selectedGears.length === 20) {
+        $scope.selectedGears = [];
+      }
+      if ($scope.selectedGears.indexOf(skill.name) === -1) {
+        $scope.selectedGears.push(skill.name);
+      } else {
+        $scope.selectedGears.splice($scope.selectedGears.indexOf(skill.name), 1);
+      }
+      if ($scope.selectedGears.length === 0) {
+        $scope.selectedGears = ["Phocus", "Capture One", "Lightroom", "Photoshop", "Cambo", "Sinar", "Hasselblad", "Phase One", "Sony", "Nikon", "Canon", "Briese", "K 5600", "Kino Flo", "Arri", "Elinchrom", "Dynalite", "Speedotron", "Profoto", "Broncolor"];
       }
     };
 

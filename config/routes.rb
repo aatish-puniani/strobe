@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       get '/assistants' => 'assistants#send_text_message'
 
       get '/occupations' => 'occupations#index'
+      get '/skills' => 'skills#index'
     end
 
     get '/photographers' => 'photographers#index'

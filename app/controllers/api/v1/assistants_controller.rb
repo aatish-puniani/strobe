@@ -65,6 +65,14 @@ class Api::V1::AssistantsController < ApplicationController
       car: params[:car] || @assistant.car,
       city_id: params[:city_id] || @assistant.city_id
     )
+      CategorizedSkill.delete_all(assistant_id: assistant_id)
+      params[:skill_ids].each do |skill_id|
+        CategorizedSkill.create(skill_id: skill_id, assistant_id: assistant_id)
+      end
+      CategorizedAssistant.delete_all(assistant_id: assistant_id)
+      params[:category_ids].each do |category_id|
+        CategorizedAssistant.create(category_id: category_id, assistant_id: assistant_id)
+      end
       flash[:success] = "Profile successfully updated!"
       render 'show.json.jbuilder'
     else

@@ -1,6 +1,7 @@
 json.id @assistant.id
 json.avatar @assistant.avatar.url(:thumb)
 json.occupation @assistant.occupation
+json.skill @assistant.skill
 json.name @assistant.name
 json.city @assistant.city
 json.years_exp @assistant.years_exp
