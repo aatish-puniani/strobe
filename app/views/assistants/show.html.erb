@@ -13,8 +13,10 @@
                                         <ul class="acc-list">
                                             <li><%= link_to "View My Profile", "/assistants/#{current_assistant.id}", method: :get %></li>
                                             <li><%= link_to "Edit My Profile", "/assistants/#{current_assistant.id}/edit", method: :get %></li>
+                                            <li><%= link_to "Back To Assistants", "/assistants", method: :get %></li>
                                             <% else %>
                                             <li><%= link_to "Not a member?", "/assistants/sign_up", method: :get %></li>
+                                            <li><%= link_to "Back To Assistants", "/assistants", method: :get %></li>
                                             <% end %>
                                             
                                         </ul>
