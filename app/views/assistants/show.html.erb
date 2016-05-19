@@ -137,7 +137,7 @@
                                   <label class="col-sm-3 control-label">Facebook</label>
 
                                   <div class="col-sm-9">
-                                      <a><p>Facebook<% link_to @assistant.facebook %></p></a>
+                                      <a href="#@assistant.facebook"><p>Facebook</a>
                                   </div>
                                   
                                   <label class="col-sm-3 control-label">Twitter</label>
@@ -188,6 +188,16 @@
                                       <ul>
                                           <% @assistant.skills.each do |skill| %>
                                           <li><%= skill.name %></li>
+                                          <% end %>
+                                          </ul>
+                                  </div>
+
+                                  <label class="col-sm-3 control-label">Genre</label>
+
+                                  <div class="col-sm-9">
+                                      <ul>
+                                          <% @assistant.categories.each do |category| %>
+                                          <li><%= category.name %></li>
                                           <% end %>
                                           </ul>
                                   </div>
