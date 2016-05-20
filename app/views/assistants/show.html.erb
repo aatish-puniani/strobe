@@ -126,7 +126,7 @@
                                   <label class="col-sm-3 control-label">URL</label>
 
                                   <div class="col-sm-9">
-                                      <a href="<%= @assistant.url %>"><p><%= @assistant.name %>'s Website</a>
+                                      <a href="<%= @assistant.url %>" target="_blank"><p><%= @assistant.name %>'s Website</a>
                                   </div>
                                 
                                   
@@ -141,7 +141,7 @@
                                   <label class="col-sm-3 control-label">Facebook</label>
 
                                   <div class="col-sm-9">
-                                      <a href="<%= @assistant.facebook %>"><p><%= @assistant.name %>'s Facebook</a>
+                                      <a href="<%= @assistant.facebook %>" target="_blank"><p><%= @assistant.name %>'s Facebook</a>
                                   </div>
                                   <% end %>
                                   
@@ -150,7 +150,7 @@
                                   <label class="col-sm-3 control-label">Twitter</label>
 
                                   <div class="col-sm-9">
-                                      <a href="<%= @assistant.twitter %>"><p><%= @assistant.name %>'s Twitter</p></a>
+                                      <a href="<%= @assistant.twitter %>" target="_blank"><p><%= @assistant.name %>'s Twitter</p></a>
                                   </div>
                                   <% end %>
                                   
@@ -159,7 +159,7 @@
                                   <label class="col-sm-3 control-label">Instagram</label>
 
                                   <div class="col-sm-9">
-                                      <a href="<%= @assistant.instagram %>"><p><%= @assistant.name %>'s Instagram</p></a>
+                                      <a href="<%= @assistant.instagram %>" target="_blank"><p><%= @assistant.name %>'s Instagram</p></a>
                                   </div>
                                   <% end %>
                                   
@@ -168,7 +168,7 @@
                                   <label class="col-sm-3 control-label">Blog</label>
 
                                   <div class="col-sm-9">
-                                      <a href="<%= @assistant.blog %>"><p><%= @assistant.name %>'s Blog </p></a>
+                                      <a href="<%= @assistant.blog %>" target="_blank"><p><%= @assistant.name %>'s Blog </p></a>
                                   </div>
                                   <% end %>
 
@@ -187,7 +187,11 @@
                                   <label class="col-sm-3 control-label">Car</label>
 
                                   <div class="col-sm-9">
-                                      <p><%= @assistant.car %></p>
+                                    <% if @assistant.car == true %>
+                                      <p>Yes</p>
+                                      <% else %>
+                                      <p>No</p>
+                                      <% end %>
                                   </div>
 
                                   <label class="col-sm-3 control-label">City</label>
