@@ -8,4 +8,5 @@ json.array! @assistants.each do |assistant|
   json.years_exp assistant.years_exp
   json.day_rate assistant.day_rate
   json.bio assistant.bio
+  json.email assistant.email
 end

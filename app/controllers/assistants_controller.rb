@@ -1,5 +1,6 @@
 class AssistantsController < ApplicationController
   def index
+    @assistants = Assistant.all
     @occupations = Occupation.all
     @categories = Category.all
     @cities = City.all
